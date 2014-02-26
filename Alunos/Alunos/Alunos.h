@@ -10,22 +10,11 @@
 
 @interface Alunos : NSObject
 
-{
-    int numero;
-    NSString * nome;
-    //NSArray * disciplinas;
-    NSMutableArray * disciplinas;
-}
+@property (nonatomic) int nrAluno;
+@property (nonatomic) NSString * nomeAluno;
+@property (nonatomic) int tipoUtilizador;
+@property (nonatomic) NSString * curso;
+@property (nonatomic) NSString * password;
 
-
--(int) numero;
--(void) setNumero:(int)novoNumero;
--(NSString *) getNome;
--(void)setNome:(NSString *)novoNome;
--(void) inicializarDisciplinas;
--(NSArray *) getDisciplina;
-
--(int) countDisciplinas;
--(float) mediaNotas;
 
 @end

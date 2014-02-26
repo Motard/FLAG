@@ -11,26 +11,4 @@
 @implementation Alunos
 
 
--(int) numero
-{
-    return numero;
-}
-
--(void) setNumero:(int)novoNumero
-{
-    numero = novoNumero;
-}
-
--(NSString *) getNome
-{
-    return nome;
-}
-
--(void)setNome:(NSString *)novoNome
-{
-    nome = novoNome;
-}
-
-
-
 @end
