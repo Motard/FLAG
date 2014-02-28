@@ -51,8 +51,8 @@
 		2C00D20118C0A9AD002C568C /* ListaContactosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ListaContactosTests-Info.plist"; sourceTree = "<group>"; };
 		2C00D20318C0A9AD002C568C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C00D20518C0A9AD002C568C /* ListaContactosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListaContactosTests.m; sourceTree = "<group>"; };
-		2C00D20F18C0AA27002C568C /* ContactosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactosViewController.h; sourceTree = "<group>"; };
-		2C00D21018C0AA27002C568C /* ContactosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactosViewController.m; sourceTree = "<group>"; };
+		2C00D20F18C0AA27002C568C /* ContactosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactosViewController.h; path = ../ContactosViewController.h; sourceTree = "<group>"; };
+		2C00D21018C0AA27002C568C /* ContactosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactosViewController.m; path = ../ContactosViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +82,6 @@
 		2C00D1CE18C0A9AD002C568C = {
 			isa = PBXGroup;
 			children = (
-				2C00D20F18C0AA27002C568C /* ContactosViewController.h */,
-				2C00D21018C0AA27002C568C /* ContactosViewController.m */,
 				2C00D1E018C0A9AD002C568C /* ListaContactos */,
 				2C00D1FF18C0A9AD002C568C /* ListaContactosTests */,
 				2C00D1D918C0A9AD002C568C /* Frameworks */,
@@ -114,6 +112,8 @@
 		2C00D1E018C0A9AD002C568C /* ListaContactos */ = {
 			isa = PBXGroup;
 			children = (
+				2C00D20F18C0AA27002C568C /* ContactosViewController.h */,
+				2C00D21018C0AA27002C568C /* ContactosViewController.m */,
 				2C00D1E918C0A9AD002C568C /* ContactosAppDelegate.h */,
 				2C00D1EA18C0A9AD002C568C /* ContactosAppDelegate.m */,
 				2C00D1EC18C0A9AD002C568C /* Main.storyboard */,
