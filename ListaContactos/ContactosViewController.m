@@ -11,6 +11,7 @@
 @interface ContactosViewController ()
 
 @property (nonatomic) NSArray * contactos;
+@property (nonatomic) NSMutableArray * contactosOrdenados;
 
 @end
 
@@ -27,6 +28,14 @@
     return _contactos;
 }
 
+-(NSMutableArray *) contactosOrdenados
+{
+    if(_contactosOrdenados == Nil )
+        _contactosOrdenados = [[NSMutableArray alloc]init];
+    
+    return _contactosOrdenados;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -34,7 +43,7 @@
     
     // Return the number of sections.
     //Neste caso so temos uma section
-    return 1;
+    return 26;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -42,7 +51,8 @@
 
     // Return the number of rows in the section.
     // Neste caso o numero de linhas é igual ao numero de posições do array
-    return [self.contactos count];
+    int aux = [self.contactosOrdenados count];
+    return aux;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,6 +125,34 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    //Indica o titulo em casa section
+    //Indica o titulo em cada section
+    
+    //Obtem a letra de cada Section
+    int asciiCode = 65 + section;
+    NSString *sectionTitle = [NSString stringWithFormat:@"%c",asciiCode];
+    
+    //Se o contactosOrdenados existir apagar todos os valores
+    if ([self.contactosOrdenados count] >1 )
+        [self.contactosOrdenados removeAllObjects];
+    
+    //Percorrer todas as posições dos contactos e comparar a primeira letra com a sectionTitle
+    //Se a primeira letra for igual á sectionTitle adicionar essa poição ao contactosOrdenados
+    int nrPosicoes = [self.contactos count];
+    for (int i=0; i<nrPosicoes; i++)
+    {
+        NSString * aux = [self.contactos objectAtIndex:i];
+        if ([aux hasPrefix:sectionTitle])
+        {
+            [self.contactosOrdenados addObject:aux];
+        }
+    }
+    NSLog(@"SECÇAO %d",section);
+    for (int i=0; i<[self.contactosOrdenados count]; i++)
+    {
+        NSLog(@"POSICAO %d NOMES %@",i,[self.contactosOrdenados objectAtIndex:i]);
+    }
+    
+    
+    return sectionTitle;
 }
 @end
