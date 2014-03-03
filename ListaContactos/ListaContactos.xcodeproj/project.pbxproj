@@ -21,6 +21,8 @@
 		2C00D20418C0A9AD002C568C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C00D20218C0A9AD002C568C /* InfoPlist.strings */; };
 		2C00D20618C0A9AD002C568C /* ListaContactosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C00D20518C0A9AD002C568C /* ListaContactosTests.m */; };
 		2C00D21118C0AA27002C568C /* ContactosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C00D21018C0AA27002C568C /* ContactosViewController.m */; };
+		2C97C42118C4905F0079EFE1 /* ContactosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C97C42018C4905F0079EFE1 /* ContactosCell.xib */; };
+		2C97C42418C492300079EFE1 /* ContactosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C97C42318C492300079EFE1 /* ContactosCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		2C00D20518C0A9AD002C568C /* ListaContactosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListaContactosTests.m; sourceTree = "<group>"; };
 		2C00D20F18C0AA27002C568C /* ContactosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactosViewController.h; path = ../ContactosViewController.h; sourceTree = "<group>"; };
 		2C00D21018C0AA27002C568C /* ContactosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactosViewController.m; path = ../ContactosViewController.m; sourceTree = "<group>"; };
+		2C97C42018C4905F0079EFE1 /* ContactosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactosCell.xib; path = ../ContactosCell.xib; sourceTree = "<group>"; };
+		2C97C42218C492300079EFE1 /* ContactosCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactosCell.h; path = ../ContactosCell.h; sourceTree = "<group>"; };
+		2C97C42318C492300079EFE1 /* ContactosCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactosCell.m; path = ../ContactosCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				2C00D20F18C0AA27002C568C /* ContactosViewController.h */,
+				2C97C42018C4905F0079EFE1 /* ContactosCell.xib */,
+				2C97C42218C492300079EFE1 /* ContactosCell.h */,
+				2C97C42318C492300079EFE1 /* ContactosCell.m */,
 				2C00D21018C0AA27002C568C /* ContactosViewController.m */,
 				2C00D1E918C0A9AD002C568C /* ContactosAppDelegate.h */,
 				2C00D1EA18C0A9AD002C568C /* ContactosAppDelegate.m */,
@@ -229,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C97C42118C4905F0079EFE1 /* ContactosCell.xib in Resources */,
 				2C00D1F318C0A9AD002C568C /* Images.xcassets in Resources */,
 				2C00D1E518C0A9AD002C568C /* InfoPlist.strings in Resources */,
 				2C00D1EE18C0A9AD002C568C /* Main.storyboard in Resources */,
@@ -250,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C97C42418C492300079EFE1 /* ContactosCell.m in Sources */,
 				2C00D1E718C0A9AD002C568C /* main.m in Sources */,
 				2C00D1EB18C0A9AD002C568C /* ContactosAppDelegate.m in Sources */,
 				2C00D21118C0AA27002C568C /* ContactosViewController.m in Sources */,
@@ -461,6 +471,7 @@
 				2C00D20B18C0A9AD002C568C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C00D20C18C0A9AD002C568C /* Build configuration list for PBXNativeTarget "ListaContactosTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +480,7 @@
 				2C00D20E18C0A9AD002C568C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

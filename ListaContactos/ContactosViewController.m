@@ -7,6 +7,7 @@
 //
 
 #import "ContactosViewController.h"
+#import "ContactosCell.h"
 
 @interface ContactosViewController ()
 
@@ -23,7 +24,7 @@
 {
     if(_contactos == Nil)
     {
-        _contactos = @[@"Ana", @"Maria", @"Joaquina", @"Teresa", @"Pedro", @"Nuno", @"Paulo", @"Fanny", @"Antonio", @"José", @"Sergio", @"Cajé", @"Xana", @"Karla", @"Vasco", @"Carlos", @"Rui", @"Frank"];
+        _contactos = @[@"Ana", @"Maria", @"Joaquina", @"Teresa", @"Pedro", @"Nuno", @"Paulo", @"Fanny", @"Antonio", @"José", @"Sergio", @"Cajé", @"Xana", @"Karla", @"Vasco", @"Carlos", @"Rui",@"anita", @"Frank"];
     }
     return _contactos;
 }
@@ -58,19 +59,34 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellContactos";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ContactosCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(cell == nil)
     {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        // Relacionar o meu .xib com uma celula
+        NSArray* aux = [[NSBundle mainBundle] loadNibNamed:@"ContactosCell" owner:nil options:nil];
+        
+        cell = [aux objectAtIndex:0];
     }
     
+    //Chamar o metodo que cria um array com as posições correspondentes á letra
+    [self criarNovoArrayContactos:indexPath.section];
+    
     // Configure the cell...
-    cell.textLabel.text = [self.contactos objectAtIndex:indexPath.row];
+    //cell.textLabel.text = [self.contactosOrdenados objectAtIndex:indexPath.row];
     
-    
+    // Configure the cell for my label
+    cell.nomeLabel.text = [self.contactosOrdenados objectAtIndex:indexPath.row];
+
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 40;
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -125,15 +141,22 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    //Indica o titulo em cada section
+    //Chamar o metodo para calcular o titulo de cada secção
+    NSString * sectionTitle = [self criarNovoArrayContactos:section];
+    
+    return sectionTitle;
+}
+
+-(NSString *) criarNovoArrayContactos:(NSInteger) section
+{
     
     //Obtem a letra de cada Section
     int asciiCode = 65 + section;
     NSString *sectionTitle = [NSString stringWithFormat:@"%c",asciiCode];
-    
+
+
     //Se o contactosOrdenados existir apagar todos os valores
-    if ([self.contactosOrdenados count] >1 )
-        [self.contactosOrdenados removeAllObjects];
+    self.contactosOrdenados = [[NSMutableArray alloc]init];
     
     //Percorrer todas as posições dos contactos e comparar a primeira letra com a sectionTitle
     //Se a primeira letra for igual á sectionTitle adicionar essa poição ao contactosOrdenados
@@ -141,18 +164,13 @@
     for (int i=0; i<nrPosicoes; i++)
     {
         NSString * aux = [self.contactos objectAtIndex:i];
-        if ([aux hasPrefix:sectionTitle])
+        if ([[aux uppercaseString] hasPrefix:sectionTitle])
         {
             [self.contactosOrdenados addObject:aux];
         }
     }
-    NSLog(@"SECÇAO %d",section);
-    for (int i=0; i<[self.contactosOrdenados count]; i++)
-    {
-        NSLog(@"POSICAO %d NOMES %@",i,[self.contactosOrdenados objectAtIndex:i]);
-    }
-    
     
     return sectionTitle;
+
 }
 @end
