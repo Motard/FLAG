@@ -14,13 +14,13 @@
 		2C97C43E18C4A9D90079EFE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C97C43D18C4A9D90079EFE1 /* main.m */; };
 		2C97C44218C4A9D90079EFE1 /* iEscolaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C97C44118C4A9D90079EFE1 /* iEscolaAppDelegate.m */; };
 		2C97C44518C4A9D90079EFE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C97C44318C4A9D90079EFE1 /* Main.storyboard */; };
-		2C97C44818C4A9D90079EFE1 /* iEscolaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C97C44718C4A9D90079EFE1 /* iEscolaViewController.m */; };
 		2C97C44A18C4A9D90079EFE1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C97C44918C4A9D90079EFE1 /* Images.xcassets */; };
 		2C97C45118C4A9D90079EFE1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97C45018C4A9D90079EFE1 /* XCTest.framework */; };
 		2C97C45218C4A9D90079EFE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97C43118C4A9D90079EFE1 /* Foundation.framework */; };
 		2C97C45318C4A9D90079EFE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97C43518C4A9D90079EFE1 /* UIKit.framework */; };
 		2C97C45B18C4A9D90079EFE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C97C45918C4A9D90079EFE1 /* InfoPlist.strings */; };
 		2C97C45D18C4A9D90079EFE1 /* iEscolaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C97C45C18C4A9D90079EFE1 /* iEscolaTests.m */; };
+		2C97C46818C4AB660079EFE1 /* ListaUtilizadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C97C46718C4AB660079EFE1 /* ListaUtilizadoresViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +45,14 @@
 		2C97C44018C4A9D90079EFE1 /* iEscolaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iEscolaAppDelegate.h; sourceTree = "<group>"; };
 		2C97C44118C4A9D90079EFE1 /* iEscolaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iEscolaAppDelegate.m; sourceTree = "<group>"; };
 		2C97C44418C4A9D90079EFE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2C97C44618C4A9D90079EFE1 /* iEscolaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iEscolaViewController.h; sourceTree = "<group>"; };
-		2C97C44718C4A9D90079EFE1 /* iEscolaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iEscolaViewController.m; sourceTree = "<group>"; };
 		2C97C44918C4A9D90079EFE1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2C97C44F18C4A9D90079EFE1 /* iEscolaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iEscolaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C97C45018C4A9D90079EFE1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2C97C45818C4A9D90079EFE1 /* iEscolaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iEscolaTests-Info.plist"; sourceTree = "<group>"; };
 		2C97C45A18C4A9D90079EFE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C97C45C18C4A9D90079EFE1 /* iEscolaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iEscolaTests.m; sourceTree = "<group>"; };
+		2C97C46618C4AB660079EFE1 /* ListaUtilizadoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListaUtilizadoresViewController.h; path = ../ListaUtilizadoresViewController.h; sourceTree = "<group>"; };
+		2C97C46718C4AB660079EFE1 /* ListaUtilizadoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListaUtilizadoresViewController.m; path = ../ListaUtilizadoresViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +113,10 @@
 			isa = PBXGroup;
 			children = (
 				2C97C44018C4A9D90079EFE1 /* iEscolaAppDelegate.h */,
+				2C97C46618C4AB660079EFE1 /* ListaUtilizadoresViewController.h */,
+				2C97C46718C4AB660079EFE1 /* ListaUtilizadoresViewController.m */,
 				2C97C44118C4A9D90079EFE1 /* iEscolaAppDelegate.m */,
 				2C97C44318C4A9D90079EFE1 /* Main.storyboard */,
-				2C97C44618C4A9D90079EFE1 /* iEscolaViewController.h */,
-				2C97C44718C4A9D90079EFE1 /* iEscolaViewController.m */,
 				2C97C44918C4A9D90079EFE1 /* Images.xcassets */,
 				2C97C43818C4A9D90079EFE1 /* Supporting Files */,
 			);
@@ -250,8 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C97C46818C4AB660079EFE1 /* ListaUtilizadoresViewController.m in Sources */,
 				2C97C43E18C4A9D90079EFE1 /* main.m in Sources */,
-				2C97C44818C4A9D90079EFE1 /* iEscolaViewController.m in Sources */,
 				2C97C44218C4A9D90079EFE1 /* iEscolaAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
