@@ -129,6 +129,7 @@
     self.cursoUtilizador.text = @"";
     self.password.text = @"";
     
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
