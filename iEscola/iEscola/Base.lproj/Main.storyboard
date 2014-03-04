@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uj6-oS-nN2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uj6-oS-nN2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -27,11 +27,96 @@
                             <outlet property="delegate" destination="HWe-Mn-sJX" id="Fc3-yp-IUx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lista de Utilizadores" id="KO6-dP-E4V"/>
+                    <navigationItem key="navigationItem" title="Lista de Utilizadores" id="KO6-dP-E4V">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="8rA-eV-leg">
+                            <connections>
+                                <segue destination="xzM-YR-fFQ" kind="push" id="Lwb-uL-o7k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hI2-fG-Mzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="441" y="72"/>
+        </scene>
+        <!--Add Utilizador View Controller - Add Utilizador-->
+        <scene sceneID="b4z-Qh-xwX">
+            <objects>
+                <viewController id="xzM-YR-fFQ" customClass="AddUtilizadorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aBh-fP-tg9"/>
+                        <viewControllerLayoutGuide type="bottom" id="MHk-ID-MWc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="33s-fW-4p6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nr" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d5p-TK-Klw">
+                                <rect key="frame" x="20" y="77" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgp-Q0-ZZh">
+                                <rect key="frame" x="20" y="115" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tipo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jmb-6b-Ocz">
+                                <rect key="frame" x="20" y="153" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Curso" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ib1-5k-fjL">
+                                <rect key="frame" x="20" y="191" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W59-UP-FyA">
+                                <rect key="frame" x="20" y="229" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDA-T3-MC6">
+                                <rect key="frame" x="46" y="269" width="228" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86404551630434789" green="0.86404551630434789" blue="0.86404551630434789" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submeter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submeterUtilizador" destination="xzM-YR-fFQ" eventType="touchUpInside" id="ssa-Zv-K1a"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqD-Rn-Yku">
+                                <rect key="frame" x="20" y="344" width="274" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86404551630434789" green="0.86404551630434789" blue="0.86404551630434789" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Utilizador" id="cFV-KG-fX3"/>
+                    <connections>
+                        <outlet property="lAviso" destination="iqD-Rn-Yku" id="xoR-La-SIB"/>
+                        <outlet property="tfCursoUtilizador" destination="ib1-5k-fjL" id="aR4-Si-R9u"/>
+                        <outlet property="tfNomeUtilizador" destination="hgp-Q0-ZZh" id="Jf2-ES-CRM"/>
+                        <outlet property="tfNrUtilizador" destination="d5p-TK-Klw" id="rnF-vO-QvB"/>
+                        <outlet property="tfPassword" destination="W59-UP-FyA" id="4jM-AU-o8O"/>
+                        <outlet property="tfTipoUtilizador" destination="Jmb-6b-Ocz" id="TD6-KQ-1mV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LJu-gb-PFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="96"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OOT-ks-N4b">
@@ -46,7 +131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ML0-nu-N1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="72"/>
+            <point key="canvasLocation" x="9" y="72"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

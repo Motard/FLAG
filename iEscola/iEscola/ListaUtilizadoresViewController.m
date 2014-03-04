@@ -2,7 +2,7 @@
 //  ListaUtilizadoresViewController.m
 //  iEscola
 //
-//  Created by Formando FLAG on 03/03/14.
+//  Created by Paulo Martins on 03/03/14.
 //  Copyright (c) 2014 Paulo Martins. All rights reserved.
 //
 

@@ -20,7 +20,10 @@
 		2C97C45318C4A9D90079EFE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97C43518C4A9D90079EFE1 /* UIKit.framework */; };
 		2C97C45B18C4A9D90079EFE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C97C45918C4A9D90079EFE1 /* InfoPlist.strings */; };
 		2C97C45D18C4A9D90079EFE1 /* iEscolaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C97C45C18C4A9D90079EFE1 /* iEscolaTests.m */; };
-		2C97C46818C4AB660079EFE1 /* ListaUtilizadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C97C46718C4AB660079EFE1 /* ListaUtilizadoresViewController.m */; };
+		9634F49818C4D7BE0053AF5C /* ListaUtilizadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */; };
+		9634F49B18C4E5FD0053AF5C /* Utilizadores.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49A18C4E5FD0053AF5C /* Utilizadores.m */; };
+		9634F49E18C4EA330053AF5C /* AddUtilizadorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49D18C4EA330053AF5C /* AddUtilizadorViewController.m */; };
+		9634F4A118C5DA7C0053AF5C /* iEscolaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F4A018C5DA7C0053AF5C /* iEscolaModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +54,14 @@
 		2C97C45818C4A9D90079EFE1 /* iEscolaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iEscolaTests-Info.plist"; sourceTree = "<group>"; };
 		2C97C45A18C4A9D90079EFE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C97C45C18C4A9D90079EFE1 /* iEscolaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iEscolaTests.m; sourceTree = "<group>"; };
-		2C97C46618C4AB660079EFE1 /* ListaUtilizadoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListaUtilizadoresViewController.h; path = ../ListaUtilizadoresViewController.h; sourceTree = "<group>"; };
-		2C97C46718C4AB660079EFE1 /* ListaUtilizadoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListaUtilizadoresViewController.m; path = ../ListaUtilizadoresViewController.m; sourceTree = "<group>"; };
+		9634F49618C4D7BE0053AF5C /* ListaUtilizadoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaUtilizadoresViewController.h; sourceTree = "<group>"; };
+		9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaUtilizadoresViewController.m; sourceTree = "<group>"; };
+		9634F49918C4E5FD0053AF5C /* Utilizadores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilizadores.h; sourceTree = "<group>"; };
+		9634F49A18C4E5FD0053AF5C /* Utilizadores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilizadores.m; sourceTree = "<group>"; };
+		9634F49C18C4EA330053AF5C /* AddUtilizadorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUtilizadorViewController.h; sourceTree = "<group>"; };
+		9634F49D18C4EA330053AF5C /* AddUtilizadorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUtilizadorViewController.m; sourceTree = "<group>"; };
+		9634F49F18C5DA7C0053AF5C /* iEscolaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iEscolaModel.h; sourceTree = "<group>"; };
+		9634F4A018C5DA7C0053AF5C /* iEscolaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iEscolaModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +121,17 @@
 		2C97C43718C4A9D90079EFE1 /* iEscola */ = {
 			isa = PBXGroup;
 			children = (
+				9634F49618C4D7BE0053AF5C /* ListaUtilizadoresViewController.h */,
+				9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */,
 				2C97C44018C4A9D90079EFE1 /* iEscolaAppDelegate.h */,
-				2C97C46618C4AB660079EFE1 /* ListaUtilizadoresViewController.h */,
-				2C97C46718C4AB660079EFE1 /* ListaUtilizadoresViewController.m */,
 				2C97C44118C4A9D90079EFE1 /* iEscolaAppDelegate.m */,
+				9634F49F18C5DA7C0053AF5C /* iEscolaModel.h */,
+				9634F4A018C5DA7C0053AF5C /* iEscolaModel.m */,
 				2C97C44318C4A9D90079EFE1 /* Main.storyboard */,
+				9634F49C18C4EA330053AF5C /* AddUtilizadorViewController.h */,
+				9634F49D18C4EA330053AF5C /* AddUtilizadorViewController.m */,
+				9634F49918C4E5FD0053AF5C /* Utilizadores.h */,
+				9634F49A18C4E5FD0053AF5C /* Utilizadores.m */,
 				2C97C44918C4A9D90079EFE1 /* Images.xcassets */,
 				2C97C43818C4A9D90079EFE1 /* Supporting Files */,
 			);
@@ -250,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C97C46818C4AB660079EFE1 /* ListaUtilizadoresViewController.m in Sources */,
+				9634F49B18C4E5FD0053AF5C /* Utilizadores.m in Sources */,
+				9634F49818C4D7BE0053AF5C /* ListaUtilizadoresViewController.m in Sources */,
+				9634F49E18C4EA330053AF5C /* AddUtilizadorViewController.m in Sources */,
 				2C97C43E18C4A9D90079EFE1 /* main.m in Sources */,
+				9634F4A118C5DA7C0053AF5C /* iEscolaModel.m in Sources */,
 				2C97C44218C4A9D90079EFE1 /* iEscolaAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +479,7 @@
 				2C97C46218C4A9D90079EFE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C97C46318C4A9D90079EFE1 /* Build configuration list for PBXNativeTarget "iEscolaTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +488,7 @@
 				2C97C46518C4A9D90079EFE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
