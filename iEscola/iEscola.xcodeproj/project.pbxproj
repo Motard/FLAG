@@ -23,7 +23,6 @@
 		9634F49818C4D7BE0053AF5C /* ListaUtilizadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */; };
 		9634F49B18C4E5FD0053AF5C /* Utilizadores.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49A18C4E5FD0053AF5C /* Utilizadores.m */; };
 		9634F49E18C4EA330053AF5C /* AddUtilizadorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49D18C4EA330053AF5C /* AddUtilizadorViewController.m */; };
-		9634F4A118C5DA7C0053AF5C /* iEscolaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F4A018C5DA7C0053AF5C /* iEscolaModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +59,6 @@
 		9634F49A18C4E5FD0053AF5C /* Utilizadores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilizadores.m; sourceTree = "<group>"; };
 		9634F49C18C4EA330053AF5C /* AddUtilizadorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUtilizadorViewController.h; sourceTree = "<group>"; };
 		9634F49D18C4EA330053AF5C /* AddUtilizadorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUtilizadorViewController.m; sourceTree = "<group>"; };
-		9634F49F18C5DA7C0053AF5C /* iEscolaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iEscolaModel.h; sourceTree = "<group>"; };
-		9634F4A018C5DA7C0053AF5C /* iEscolaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iEscolaModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +122,6 @@
 				9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */,
 				2C97C44018C4A9D90079EFE1 /* iEscolaAppDelegate.h */,
 				2C97C44118C4A9D90079EFE1 /* iEscolaAppDelegate.m */,
-				9634F49F18C5DA7C0053AF5C /* iEscolaModel.h */,
-				9634F4A018C5DA7C0053AF5C /* iEscolaModel.m */,
 				2C97C44318C4A9D90079EFE1 /* Main.storyboard */,
 				9634F49C18C4EA330053AF5C /* AddUtilizadorViewController.h */,
 				9634F49D18C4EA330053AF5C /* AddUtilizadorViewController.m */,
@@ -269,7 +264,6 @@
 				9634F49818C4D7BE0053AF5C /* ListaUtilizadoresViewController.m in Sources */,
 				9634F49E18C4EA330053AF5C /* AddUtilizadorViewController.m in Sources */,
 				2C97C43E18C4A9D90079EFE1 /* main.m in Sources */,
-				9634F4A118C5DA7C0053AF5C /* iEscolaModel.m in Sources */,
 				2C97C44218C4A9D90079EFE1 /* iEscolaAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Utilizadores.h"
+#import "ListaUtilizadoresViewController.h"
+
 
 
 @interface AddUtilizadorViewController : UIViewController

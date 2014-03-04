@@ -22,6 +22,7 @@
     if(_alunosArr == nil)
     {
         _alunosArr=[[NSMutableArray alloc]init];
+        NSLog(@"Instanciar alunosArr");
     }
     return _alunosArr;
 }

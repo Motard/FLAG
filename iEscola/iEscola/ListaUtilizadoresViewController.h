@@ -10,4 +10,7 @@
 
 @interface ListaUtilizadoresViewController : UITableViewController
 
+
+@property (retain,nonatomic) NSMutableArray* utilizadoresArr;
+
 @end

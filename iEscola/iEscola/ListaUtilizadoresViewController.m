@@ -14,6 +14,18 @@
 
 @implementation ListaUtilizadoresViewController
 
+//Instanciar o UtilizadoresArr
+-(NSMutableArray*) utilizadoresArr
+{
+    if(_utilizadoresArr==Nil)
+    {
+        _utilizadoresArr = [[NSMutableArray alloc]init];
+        NSLog(@"Lazy instantiation utilizadoresArray");
+    }
+    return _utilizadoresArr;
+}
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
