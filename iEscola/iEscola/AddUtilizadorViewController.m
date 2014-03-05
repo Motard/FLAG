@@ -17,44 +17,11 @@
 
 @implementation AddUtilizadorViewController
 
--(id)init{
-    NSLog(@"init");
-    self=[super init];
-    if(self)
-    {
-        self.utilizadoresArr = [[NSMutableArray alloc]init];
-        NSLog(@"Lazy instantiation utilizadoresArray");
-    }
-    
-    return self;
-}
-//Instanciar o UtilizadoresArr
-//-(NSMutableArray*) utilizadoresArr
-//{
-//    if(!_utilizadoresArr)
-//    {
-//        _utilizadoresArr = [[NSMutableArray alloc]init];
-//        NSLog(@"Lazy instantiation utilizadoresArray");
-//    }
-//    return _utilizadoresArr;
-//}
 
 - (IBAction)submeterUtilizador {
     
     //Variável do metodo
     Utilizadores* utilizadorObj;
-    //NSMutableArray* utilizadoresArrLocal;
-    //utilizadoresArrLocal = [ListaUtilizadoresViewController utilizadoresArr];
-    ListaUtilizadoresViewController *arr;
-    
-//    if(arr.utilizadoresArr==Nil)
-//    {
-//        arr.utilizadoresArr = [[NSMutableArray alloc]init];
-//        NSLog(@"Lazy instantiation utilizadoresArray");
-//    }
-    
-    int xpto = [self.utilizadoresArr count];
-    NSLog(@"%d",xpto);
     
     //Instanciar um utilizadorObj
     utilizadorObj = [[Utilizadores alloc]init];
@@ -67,7 +34,7 @@
     [self.tfPassword resignFirstResponder];
     
     //Ver se já existe utilizador com o numero introduzido
-    for (Utilizadores* obj in arr.utilizadoresArr)
+    for (Utilizadores* obj in self.utilizadoresArr)
     {
         NSString* aux = [NSString stringWithFormat:@"%d",obj.nrUtilizador];
         if([aux isEqualToString:self.tfNrUtilizador.text])
@@ -122,7 +89,10 @@
     //Acrescentar este utilizadorObj aos UtilizadoresArr
     [self.utilizadoresArr addObject:utilizadorObj];
     
+    int xpto = [self.utilizadoresArr count];
+    NSLog(@"%d",xpto);
+    
     //Voltar para a ListaUtilizadoresView
-    //[self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

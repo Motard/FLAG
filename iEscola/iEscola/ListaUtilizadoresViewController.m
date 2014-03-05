@@ -10,6 +10,8 @@
 
 @interface ListaUtilizadoresViewController ()
 
+@property (nonatomic) NSMutableArray* utilizadoresArr;
+
 @end
 
 @implementation ListaUtilizadoresViewController
@@ -17,7 +19,7 @@
 //Instanciar o UtilizadoresArr
 -(NSMutableArray*) utilizadoresArr
 {
-    if(_utilizadoresArr==Nil)
+    if(!_utilizadoresArr)
     {
         _utilizadoresArr = [[NSMutableArray alloc]init];
         NSLog(@"Lazy instantiation utilizadoresArray");
@@ -25,10 +27,17 @@
     return _utilizadoresArr;
 }
 
+//este metodo corre sempre antes de a view ser apresentada 
+-(void)viewWillAppear:(BOOL)animated
+{
+    //Faz o refresh da tabela
+    [[self tableView] reloadData];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
+    NSLog(@"initWithStyle");
     if (self) {
         // Custom initialization
     }
@@ -37,7 +46,10 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
+    NSLog(@"viewDidLoad");
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -58,22 +70,39 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.utilizadoresArr count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
+    
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    
+    Utilizadores * obj = [self.utilizadoresArr objectAtIndex:indexPath.row];
     
     // Configure the cell...
+    cell.textLabel.text = obj.nomeUtilizador;
+    
+    //cria um botão no fim da row
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    
+    
+    // Configure the cell...
+    //cell.textLabel.text = [self.contactosOrdenados objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -117,7 +146,9 @@
 }
 */
 
-/*
+
+
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -125,8 +156,28 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    //Isto passa o utilizadoresArr da ListaUtilizadores para o utilizadoresArr da AddUtilizadores
+    if ([segue.identifier isEqual:@"segueAdicionar"])
+    {
+        AddUtilizadorViewController * view =[segue destinationViewController];
+        
+        view.utilizadoresArr=self.utilizadoresArr;
+    }
+    
 }
 
- */
+
+//este metodo é chamado quando uma row é clicada
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Utilizadores * obj = [self.utilizadoresArr objectAtIndex:indexPath.row];
+    
+    DetailUtilizadorViewController * view = [self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
+    
+    [self.navigationController pushViewController:view animated:YES];
+    
+    view.utilizadorObj = obj;
+}
 
 @end

@@ -20,6 +20,9 @@
 		2C97C45318C4A9D90079EFE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97C43518C4A9D90079EFE1 /* UIKit.framework */; };
 		2C97C45B18C4A9D90079EFE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C97C45918C4A9D90079EFE1 /* InfoPlist.strings */; };
 		2C97C45D18C4A9D90079EFE1 /* iEscolaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C97C45C18C4A9D90079EFE1 /* iEscolaTests.m */; };
+		2CE6BA9F18C73C8500297335 /* DetailUtilizadorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6BA9E18C73C8500297335 /* DetailUtilizadorViewController.m */; };
+		2CE6BAA318C7471B00297335 /* student.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE6BAA118C7471B00297335 /* student.png */; };
+		2CE6BAA518C74A2B00297335 /* professor.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2CE6BAA418C74A2B00297335 /* professor.jpeg */; };
 		9634F49818C4D7BE0053AF5C /* ListaUtilizadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */; };
 		9634F49B18C4E5FD0053AF5C /* Utilizadores.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49A18C4E5FD0053AF5C /* Utilizadores.m */; };
 		9634F49E18C4EA330053AF5C /* AddUtilizadorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49D18C4EA330053AF5C /* AddUtilizadorViewController.m */; };
@@ -53,6 +56,10 @@
 		2C97C45818C4A9D90079EFE1 /* iEscolaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iEscolaTests-Info.plist"; sourceTree = "<group>"; };
 		2C97C45A18C4A9D90079EFE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C97C45C18C4A9D90079EFE1 /* iEscolaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iEscolaTests.m; sourceTree = "<group>"; };
+		2CE6BA9D18C73C8500297335 /* DetailUtilizadorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailUtilizadorViewController.h; sourceTree = "<group>"; };
+		2CE6BA9E18C73C8500297335 /* DetailUtilizadorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailUtilizadorViewController.m; sourceTree = "<group>"; };
+		2CE6BAA118C7471B00297335 /* student.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = student.png; sourceTree = "<group>"; };
+		2CE6BAA418C74A2B00297335 /* professor.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = professor.jpeg; sourceTree = "<group>"; };
 		9634F49618C4D7BE0053AF5C /* ListaUtilizadoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaUtilizadoresViewController.h; sourceTree = "<group>"; };
 		9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaUtilizadoresViewController.m; sourceTree = "<group>"; };
 		9634F49918C4E5FD0053AF5C /* Utilizadores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilizadores.h; sourceTree = "<group>"; };
@@ -123,6 +130,8 @@
 				2C97C44018C4A9D90079EFE1 /* iEscolaAppDelegate.h */,
 				2C97C44118C4A9D90079EFE1 /* iEscolaAppDelegate.m */,
 				2C97C44318C4A9D90079EFE1 /* Main.storyboard */,
+				2CE6BA9D18C73C8500297335 /* DetailUtilizadorViewController.h */,
+				2CE6BA9E18C73C8500297335 /* DetailUtilizadorViewController.m */,
 				9634F49C18C4EA330053AF5C /* AddUtilizadorViewController.h */,
 				9634F49D18C4EA330053AF5C /* AddUtilizadorViewController.m */,
 				9634F49918C4E5FD0053AF5C /* Utilizadores.h */,
@@ -136,6 +145,8 @@
 		2C97C43818C4A9D90079EFE1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2CE6BAA418C74A2B00297335 /* professor.jpeg */,
+				2CE6BAA118C7471B00297335 /* student.png */,
 				2C97C43918C4A9D90079EFE1 /* iEscola-Info.plist */,
 				2C97C43A18C4A9D90079EFE1 /* InfoPlist.strings */,
 				2C97C43D18C4A9D90079EFE1 /* main.m */,
@@ -239,9 +250,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE6BAA518C74A2B00297335 /* professor.jpeg in Resources */,
 				2C97C44A18C4A9D90079EFE1 /* Images.xcassets in Resources */,
 				2C97C43C18C4A9D90079EFE1 /* InfoPlist.strings in Resources */,
 				2C97C44518C4A9D90079EFE1 /* Main.storyboard in Resources */,
+				2CE6BAA318C7471B00297335 /* student.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +277,7 @@
 				9634F49818C4D7BE0053AF5C /* ListaUtilizadoresViewController.m in Sources */,
 				9634F49E18C4EA330053AF5C /* AddUtilizadorViewController.m in Sources */,
 				2C97C43E18C4A9D90079EFE1 /* main.m in Sources */,
+				2CE6BA9F18C73C8500297335 /* DetailUtilizadorViewController.m in Sources */,
 				2C97C44218C4A9D90079EFE1 /* iEscolaAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

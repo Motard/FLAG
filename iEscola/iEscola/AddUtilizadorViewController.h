@@ -22,6 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lAviso;
 
-@property (strong,nonatomic) NSMutableArray* utilizadoresArr;
+@property (nonatomic) NSMutableArray* utilizadoresArr;
 
 @end

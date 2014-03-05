@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddUtilizadorViewController.h"
+#import "DetailUtilizadorViewController.h"
 
 @interface ListaUtilizadoresViewController : UITableViewController
 
 
-@property (retain,nonatomic) NSMutableArray* utilizadoresArr;
 
 @end
