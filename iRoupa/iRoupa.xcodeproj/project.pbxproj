@@ -22,6 +22,10 @@
 		2CE9A06B18C9CFEF00CF5DE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE9A04A18C9CFEF00CF5DE8 /* UIKit.framework */; };
 		2CE9A07318C9CFEF00CF5DE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CE9A07118C9CFEF00CF5DE8 /* InfoPlist.strings */; };
 		2CE9A07518C9CFEF00CF5DE8 /* iRoupaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9A07418C9CFEF00CF5DE8 /* iRoupaTests.m */; };
+		2CE9A08118C9D13300CF5DE8 /* baby-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE9A07E18C9D13300CF5DE8 /* baby-32.png */; };
+		2CE9A08218C9D13300CF5DE8 /* user_female3-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE9A07F18C9D13300CF5DE8 /* user_female3-32.png */; };
+		2CE9A08318C9D13300CF5DE8 /* user_male3-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE9A08018C9D13300CF5DE8 /* user_male3-32.png */; };
+		2CE9A08618C9D36F00CF5DE8 /* BabyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9A08518C9D36F00CF5DE8 /* BabyTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,11 @@
 		2CE9A07018C9CFEF00CF5DE8 /* iRoupaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iRoupaTests-Info.plist"; sourceTree = "<group>"; };
 		2CE9A07218C9CFEF00CF5DE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CE9A07418C9CFEF00CF5DE8 /* iRoupaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iRoupaTests.m; sourceTree = "<group>"; };
+		2CE9A07E18C9D13300CF5DE8 /* baby-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baby-32.png"; sourceTree = "<group>"; };
+		2CE9A07F18C9D13300CF5DE8 /* user_female3-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_female3-32.png"; sourceTree = "<group>"; };
+		2CE9A08018C9D13300CF5DE8 /* user_male3-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_male3-32.png"; sourceTree = "<group>"; };
+		2CE9A08418C9D36F00CF5DE8 /* BabyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyTableViewController.h; sourceTree = "<group>"; };
+		2CE9A08518C9D36F00CF5DE8 /* BabyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +133,8 @@
 				2CE9A05F18C9CFEF00CF5DE8 /* iEscolaSecondViewController.m */,
 				2CE9A06118C9CFEF00CF5DE8 /* Images.xcassets */,
 				2CE9A04D18C9CFEF00CF5DE8 /* Supporting Files */,
+				2CE9A08418C9D36F00CF5DE8 /* BabyTableViewController.h */,
+				2CE9A08518C9D36F00CF5DE8 /* BabyTableViewController.m */,
 			);
 			path = iRoupa;
 			sourceTree = "<group>";
@@ -131,6 +142,9 @@
 		2CE9A04D18C9CFEF00CF5DE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2CE9A07E18C9D13300CF5DE8 /* baby-32.png */,
+				2CE9A07F18C9D13300CF5DE8 /* user_female3-32.png */,
+				2CE9A08018C9D13300CF5DE8 /* user_male3-32.png */,
 				2CE9A04E18C9CFEF00CF5DE8 /* iRoupa-Info.plist */,
 				2CE9A04F18C9CFEF00CF5DE8 /* InfoPlist.strings */,
 				2CE9A05218C9CFEF00CF5DE8 /* main.m */,
@@ -236,6 +250,9 @@
 			files = (
 				2CE9A06218C9CFEF00CF5DE8 /* Images.xcassets in Resources */,
 				2CE9A05118C9CFEF00CF5DE8 /* InfoPlist.strings in Resources */,
+				2CE9A08318C9D13300CF5DE8 /* user_male3-32.png in Resources */,
+				2CE9A08118C9D13300CF5DE8 /* baby-32.png in Resources */,
+				2CE9A08218C9D13300CF5DE8 /* user_female3-32.png in Resources */,
 				2CE9A05A18C9CFEF00CF5DE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +275,7 @@
 				2CE9A05318C9CFEF00CF5DE8 /* main.m in Sources */,
 				2CE9A05D18C9CFEF00CF5DE8 /* iEscolaFirstViewController.m in Sources */,
 				2CE9A05718C9CFEF00CF5DE8 /* iEscolaAppDelegate.m in Sources */,
+				2CE9A08618C9D36F00CF5DE8 /* BabyTableViewController.m in Sources */,
 				2CE9A06018C9CFEF00CF5DE8 /* iEscolaSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
