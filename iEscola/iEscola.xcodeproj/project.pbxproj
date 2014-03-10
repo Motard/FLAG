@@ -23,6 +23,7 @@
 		2CE6BA9F18C73C8500297335 /* DetailUtilizadorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6BA9E18C73C8500297335 /* DetailUtilizadorViewController.m */; };
 		2CE6BAA318C7471B00297335 /* student.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE6BAA118C7471B00297335 /* student.png */; };
 		2CE6BAA518C74A2B00297335 /* professor.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2CE6BAA418C74A2B00297335 /* professor.jpeg */; };
+		9633374518CE39C700EFA992 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9633374418CE39C700EFA992 /* CoreLocation.framework */; };
 		9634F49818C4D7BE0053AF5C /* ListaUtilizadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */; };
 		9634F49B18C4E5FD0053AF5C /* Utilizadores.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49A18C4E5FD0053AF5C /* Utilizadores.m */; };
 		9634F49E18C4EA330053AF5C /* AddUtilizadorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49D18C4EA330053AF5C /* AddUtilizadorViewController.m */; };
@@ -60,6 +61,7 @@
 		2CE6BA9E18C73C8500297335 /* DetailUtilizadorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailUtilizadorViewController.m; sourceTree = "<group>"; };
 		2CE6BAA118C7471B00297335 /* student.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = student.png; sourceTree = "<group>"; };
 		2CE6BAA418C74A2B00297335 /* professor.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = professor.jpeg; sourceTree = "<group>"; };
+		9633374418CE39C700EFA992 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9634F49618C4D7BE0053AF5C /* ListaUtilizadoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaUtilizadoresViewController.h; sourceTree = "<group>"; };
 		9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaUtilizadoresViewController.m; sourceTree = "<group>"; };
 		9634F49918C4E5FD0053AF5C /* Utilizadores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilizadores.h; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9633374518CE39C700EFA992 /* CoreLocation.framework in Frameworks */,
 				2C97C43418C4A9D90079EFE1 /* CoreGraphics.framework in Frameworks */,
 				2C97C43618C4A9D90079EFE1 /* UIKit.framework in Frameworks */,
 				2C97C43218C4A9D90079EFE1 /* Foundation.framework in Frameworks */,
@@ -114,6 +117,7 @@
 		2C97C43018C4A9D90079EFE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9633374418CE39C700EFA992 /* CoreLocation.framework */,
 				2C97C43118C4A9D90079EFE1 /* Foundation.framework */,
 				2C97C43318C4A9D90079EFE1 /* CoreGraphics.framework */,
 				2C97C43518C4A9D90079EFE1 /* UIKit.framework */,

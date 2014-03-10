@@ -10,12 +10,35 @@
 
 @interface AddUtilizadorViewController ()
 
+//Criar um objecto do tipo CLLocationManager
+@property (nonatomic) CLLocationManager* locationManager;
 
 @end
 
 
-
 @implementation AddUtilizadorViewController
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    //Instanciar o locationManager
+    self.locationManager = [[CLLocationManager alloc]init];
+    
+    //Define-se a si próprio como o objecto a receber os updates
+    self.locationManager.delegate = self;
+    
+    //Defenir a accuracy
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    //liga o GPS e pede a localização
+    [self.locationManager startUpdatingLocation];
+    
+    NSLog(@"Estou a obter a localização");
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"%@",newLocation);
+}
 
 
 - (IBAction)submeterUtilizador {
@@ -88,6 +111,9 @@
     
     //Acrescentar este utilizadorObj aos UtilizadoresArr
     [self.utilizadoresArr addObject:utilizadorObj];
+    
+    
+    
     
     int xpto = [self.utilizadoresArr count];
     NSLog(@"%d",xpto);

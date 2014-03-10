@@ -26,6 +26,7 @@
     //Criar um objecto de tipo CLLocationManager
     self.manager = [[CLLocationManager alloc]init];
     
+    //Define-se a si próprio como o objecto a receber os updates
     self.manager.delegate = self;
     
     //Defenir a accuracy

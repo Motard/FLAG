@@ -10,9 +10,13 @@
 #import "Utilizadores.h"
 #import "ListaUtilizadoresViewController.h"
 
+//framework que gere as locations
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface AddUtilizadorViewController : UIViewController
+
+@interface AddUtilizadorViewController : UIViewController <CLLocationManagerDelegate>
+
 
 @property (weak, nonatomic) IBOutlet UITextField *tfNrUtilizador;
 @property (weak, nonatomic) IBOutlet UITextField *tfNomeUtilizador;
