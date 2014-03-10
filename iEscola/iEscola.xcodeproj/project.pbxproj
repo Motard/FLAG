@@ -24,6 +24,9 @@
 		2CE6BAA318C7471B00297335 /* student.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE6BAA118C7471B00297335 /* student.png */; };
 		2CE6BAA518C74A2B00297335 /* professor.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2CE6BAA418C74A2B00297335 /* professor.jpeg */; };
 		9633374518CE39C700EFA992 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9633374418CE39C700EFA992 /* CoreLocation.framework */; };
+		9633374818CE5DCD00EFA992 /* Utilizadores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9633374618CE5DCD00EFA992 /* Utilizadores.xcdatamodeld */; };
+		9633374E18CE62E900EFA992 /* UtilizadoresEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9633374D18CE62E900EFA992 /* UtilizadoresEntity.m */; };
+		9633375018CE642500EFA992 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9633374F18CE642500EFA992 /* CoreData.framework */; };
 		9634F49818C4D7BE0053AF5C /* ListaUtilizadoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */; };
 		9634F49B18C4E5FD0053AF5C /* Utilizadores.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49A18C4E5FD0053AF5C /* Utilizadores.m */; };
 		9634F49E18C4EA330053AF5C /* AddUtilizadorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F49D18C4EA330053AF5C /* AddUtilizadorViewController.m */; };
@@ -62,6 +65,10 @@
 		2CE6BAA118C7471B00297335 /* student.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = student.png; sourceTree = "<group>"; };
 		2CE6BAA418C74A2B00297335 /* professor.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = professor.jpeg; sourceTree = "<group>"; };
 		9633374418CE39C700EFA992 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9633374718CE5DCD00EFA992 /* Utilizadores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Utilizadores.xcdatamodel; sourceTree = "<group>"; };
+		9633374C18CE62E900EFA992 /* UtilizadoresEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilizadoresEntity.h; sourceTree = "<group>"; };
+		9633374D18CE62E900EFA992 /* UtilizadoresEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilizadoresEntity.m; sourceTree = "<group>"; };
+		9633374F18CE642500EFA992 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9634F49618C4D7BE0053AF5C /* ListaUtilizadoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaUtilizadoresViewController.h; sourceTree = "<group>"; };
 		9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaUtilizadoresViewController.m; sourceTree = "<group>"; };
 		9634F49918C4E5FD0053AF5C /* Utilizadores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilizadores.h; sourceTree = "<group>"; };
@@ -75,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9633375018CE642500EFA992 /* CoreData.framework in Frameworks */,
 				9633374518CE39C700EFA992 /* CoreLocation.framework in Frameworks */,
 				2C97C43418C4A9D90079EFE1 /* CoreGraphics.framework in Frameworks */,
 				2C97C43618C4A9D90079EFE1 /* UIKit.framework in Frameworks */,
@@ -117,6 +125,7 @@
 		2C97C43018C4A9D90079EFE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9633374F18CE642500EFA992 /* CoreData.framework */,
 				9633374418CE39C700EFA992 /* CoreLocation.framework */,
 				2C97C43118C4A9D90079EFE1 /* Foundation.framework */,
 				2C97C43318C4A9D90079EFE1 /* CoreGraphics.framework */,
@@ -130,10 +139,13 @@
 			isa = PBXGroup;
 			children = (
 				9634F49618C4D7BE0053AF5C /* ListaUtilizadoresViewController.h */,
+				9633374C18CE62E900EFA992 /* UtilizadoresEntity.h */,
+				9633374D18CE62E900EFA992 /* UtilizadoresEntity.m */,
 				9634F49718C4D7BE0053AF5C /* ListaUtilizadoresViewController.m */,
 				2C97C44018C4A9D90079EFE1 /* iEscolaAppDelegate.h */,
 				2C97C44118C4A9D90079EFE1 /* iEscolaAppDelegate.m */,
 				2C97C44318C4A9D90079EFE1 /* Main.storyboard */,
+				9633374618CE5DCD00EFA992 /* Utilizadores.xcdatamodeld */,
 				2CE6BA9D18C73C8500297335 /* DetailUtilizadorViewController.h */,
 				2CE6BA9E18C73C8500297335 /* DetailUtilizadorViewController.m */,
 				9634F49C18C4EA330053AF5C /* AddUtilizadorViewController.h */,
@@ -277,8 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9633374818CE5DCD00EFA992 /* Utilizadores.xcdatamodeld in Sources */,
 				9634F49B18C4E5FD0053AF5C /* Utilizadores.m in Sources */,
 				9634F49818C4D7BE0053AF5C /* ListaUtilizadoresViewController.m in Sources */,
+				9633374E18CE62E900EFA992 /* UtilizadoresEntity.m in Sources */,
 				9634F49E18C4EA330053AF5C /* AddUtilizadorViewController.m in Sources */,
 				2C97C43E18C4A9D90079EFE1 /* main.m in Sources */,
 				2CE6BA9F18C73C8500297335 /* DetailUtilizadorViewController.m in Sources */,
@@ -503,6 +517,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9633374618CE5DCD00EFA992 /* Utilizadores.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9633374718CE5DCD00EFA992 /* Utilizadores.xcdatamodel */,
+			);
+			currentVersion = 9633374718CE5DCD00EFA992 /* Utilizadores.xcdatamodel */;
+			path = Utilizadores.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2C97C42618C4A9D90079EFE1 /* Project object */;
 }

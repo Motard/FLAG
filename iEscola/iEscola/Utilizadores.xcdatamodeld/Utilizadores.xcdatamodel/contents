@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="UtilizadoresEntity" representedClassName="UtilizadoresEntity" syncable="YES">
+        <attribute name="cursoUtilizador" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nomeUtilizador" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nrUtilizador" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipoUtilizador" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="UtilizadoresEntity" positionX="160" positionY="192" width="128" height="120"/>
+    </elements>
+</model>
