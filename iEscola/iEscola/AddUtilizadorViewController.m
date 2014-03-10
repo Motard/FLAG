@@ -38,6 +38,12 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"%@",newLocation);
+    
+    self.lCoordenadas.text = [NSString stringWithFormat:@"LAT:%lf * LONG:%lf",newLocation.coordinate.latitude,newLocation.coordinate.longitude];
+    
+    //Release do recurso
+    [self.locationManager stopUpdatingLocation];
+    
 }
 
 

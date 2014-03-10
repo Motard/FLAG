@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfPassword;
 
 @property (weak, nonatomic) IBOutlet UILabel *lAviso;
+@property (weak, nonatomic) IBOutlet UILabel *lCoordenadas;
+
 
 @property (nonatomic) NSMutableArray* utilizadoresArr;
 
