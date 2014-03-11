@@ -8,10 +8,19 @@
 
 #import "AddUtilizadorViewController.h"
 
+//Necessário importar o iEscolaAppDelegate
+#import "iEscolaAppDelegate.h"
+
+//E também importar o Utilizadores Entity
+#import "UtilizadoresEntity.h"
+
 @interface AddUtilizadorViewController ()
 
 //Criar um objecto do tipo CLLocationManager
 @property (nonatomic) CLLocationManager* locationManager;
+
+//Criar um objecto do tipo NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,strong) NSManagedObjectContext * managedObjectContext;
 
 @end
 
@@ -34,6 +43,18 @@
     
     NSLog(@"Estou a obter a localização");
 }
+
+-(void)viewDidLoad
+{
+    //aceder ao appDelegate que já esta instanciado
+    //ou seja não é feito alloc init, usamos uma instancia ja criada.
+    //Isto tem o nome de Singleton
+    iEscolaAppDelegate * appDelegate = [UIApplication sharedApplication].delegate;
+    
+    //E agora dizemos que o managedObjectContext desta classe é igual ao managedObjectContext da appDelegate
+    self.managedObjectContext = appDelegate.managedObjectContext;
+}
+
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
@@ -118,6 +139,26 @@
     //Acrescentar este utilizadorObj aos UtilizadoresArr
     [self.utilizadoresArr addObject:utilizadorObj];
     
+    
+    //Bloco da BD
+    //Criar um objecto do tipo TodoEntity
+    UtilizadoresEntity *novoUtilizador = [NSEntityDescription insertNewObjectForEntityForName:@"UtilizadoresEntity" inManagedObjectContext:self.managedObjectContext];
+    
+    //Passar os valores do utilizador para uma instancia do UtilizadorEntity
+    novoUtilizador.nomeUtilizador = utilizadorObj.nomeUtilizador;
+    novoUtilizador.nrUtilizador = [NSNumber numberWithInt:utilizadorObj.nrUtilizador];
+    novoUtilizador.tipoUtilizador = [NSNumber numberWithInt:utilizadorObj.tipoUtilizador ];
+    novoUtilizador.cursoUtilizador = utilizadorObj.curso;
+    novoUtilizador.password = utilizadorObj.password;
+    
+    
+    NSError * error;
+    
+    //Guardar no managedObjectContext caso não exista erro
+    if(![self.managedObjectContext save:&error])
+    {
+        NSLog(@"ERRO!! %@",[error localizedDescription]);
+    }
     
     
     

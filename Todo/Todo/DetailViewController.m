@@ -30,7 +30,7 @@
     //Isto tem o nome de Singleton
     AppDelegate * appDelegate = [UIApplication sharedApplication].delegate;
     
-    //Agora já podemos aceder aos metodos do appDelegate
+    //E agora dizemos que o managedObjectContext desta classe é igual ao managedObjectContext da appDelegate
     self.managedObjectContext = appDelegate.managedObjectContext;
 }
 
@@ -54,7 +54,7 @@
     
     NSError * error;
     
-    //Gardar na base de dados caso não exista erro
+    //Guardar no managedObjectContext caso não exista erro
     if(![self.managedObjectContext save:&error])
     {
         NSLog(@"ERRO!! %@",[error localizedDescription]);

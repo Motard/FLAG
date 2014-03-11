@@ -21,6 +21,8 @@
 
 @implementation MasterViewController
 
+//Load dos valores da base de dados
+
 -(void)viewWillAppear:(BOOL)animated
 {
     NSFetchRequest * fetchRequest = [[NSFetchRequest alloc]init];
