@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ListSeriesViewController.h
 //  iMovie
 //
 //  Created by Formando FLAG on 11/03/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ListSeriesViewController : UITableViewController
 
 @end

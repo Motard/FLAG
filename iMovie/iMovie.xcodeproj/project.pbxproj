@@ -14,13 +14,15 @@
 		2CEF692718CF1948007FA3B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF692618CF1948007FA3B0 /* main.m */; };
 		2CEF692B18CF1948007FA3B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF692A18CF1948007FA3B0 /* AppDelegate.m */; };
 		2CEF692E18CF1948007FA3B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF692C18CF1948007FA3B0 /* Main.storyboard */; };
-		2CEF693118CF1948007FA3B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF693018CF1948007FA3B0 /* ViewController.m */; };
 		2CEF693318CF1948007FA3B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF693218CF1948007FA3B0 /* Images.xcassets */; };
 		2CEF693A18CF1948007FA3B0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEF693918CF1948007FA3B0 /* XCTest.framework */; };
 		2CEF693B18CF1948007FA3B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEF691A18CF1948007FA3B0 /* Foundation.framework */; };
 		2CEF693C18CF1948007FA3B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEF691E18CF1948007FA3B0 /* UIKit.framework */; };
 		2CEF694418CF1948007FA3B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF694218CF1948007FA3B0 /* InfoPlist.strings */; };
 		2CEF694618CF1948007FA3B0 /* iMovieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF694518CF1948007FA3B0 /* iMovieTests.m */; };
+		2CEF695418CF1B6C007FA3B0 /* ListSeriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF695318CF1B6C007FA3B0 /* ListSeriesViewController.m */; };
+		2CEF695718CF242D007FA3B0 /* TVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF695618CF242D007FA3B0 /* TVCell.m */; };
+		2CEF695918CF2452007FA3B0 /* TVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF695818CF2452007FA3B0 /* TVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +47,17 @@
 		2CEF692918CF1948007FA3B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2CEF692A18CF1948007FA3B0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2CEF692D18CF1948007FA3B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2CEF692F18CF1948007FA3B0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2CEF693018CF1948007FA3B0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2CEF693218CF1948007FA3B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2CEF693818CF1948007FA3B0 /* iMovieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMovieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CEF693918CF1948007FA3B0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2CEF694118CF1948007FA3B0 /* iMovieTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMovieTests-Info.plist"; sourceTree = "<group>"; };
 		2CEF694318CF1948007FA3B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CEF694518CF1948007FA3B0 /* iMovieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMovieTests.m; sourceTree = "<group>"; };
+		2CEF695218CF1B6C007FA3B0 /* ListSeriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSeriesViewController.h; sourceTree = "<group>"; };
+		2CEF695318CF1B6C007FA3B0 /* ListSeriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSeriesViewController.m; sourceTree = "<group>"; };
+		2CEF695518CF242D007FA3B0 /* TVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVCell.h; sourceTree = "<group>"; };
+		2CEF695618CF242D007FA3B0 /* TVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVCell.m; sourceTree = "<group>"; };
+		2CEF695818CF2452007FA3B0 /* TVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TVCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +117,14 @@
 		2CEF692018CF1948007FA3B0 /* iMovie */ = {
 			isa = PBXGroup;
 			children = (
+				2CEF695218CF1B6C007FA3B0 /* ListSeriesViewController.h */,
+				2CEF695318CF1B6C007FA3B0 /* ListSeriesViewController.m */,
+				2CEF695518CF242D007FA3B0 /* TVCell.h */,
+				2CEF695618CF242D007FA3B0 /* TVCell.m */,
+				2CEF695818CF2452007FA3B0 /* TVCell.xib */,
 				2CEF692918CF1948007FA3B0 /* AppDelegate.h */,
 				2CEF692A18CF1948007FA3B0 /* AppDelegate.m */,
 				2CEF692C18CF1948007FA3B0 /* Main.storyboard */,
-				2CEF692F18CF1948007FA3B0 /* ViewController.h */,
-				2CEF693018CF1948007FA3B0 /* ViewController.m */,
 				2CEF693218CF1948007FA3B0 /* Images.xcassets */,
 				2CEF692118CF1948007FA3B0 /* Supporting Files */,
 			);
@@ -229,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CEF693318CF1948007FA3B0 /* Images.xcassets in Resources */,
+				2CEF695918CF2452007FA3B0 /* TVCell.xib in Resources */,
 				2CEF692518CF1948007FA3B0 /* InfoPlist.strings in Resources */,
 				2CEF692E18CF1948007FA3B0 /* Main.storyboard in Resources */,
 			);
@@ -249,9 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CEF693118CF1948007FA3B0 /* ViewController.m in Sources */,
 				2CEF692B18CF1948007FA3B0 /* AppDelegate.m in Sources */,
+				2CEF695718CF242D007FA3B0 /* TVCell.m in Sources */,
 				2CEF692718CF1948007FA3B0 /* main.m in Sources */,
+				2CEF695418CF1B6C007FA3B0 /* ListSeriesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
