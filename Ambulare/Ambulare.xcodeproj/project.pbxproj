@@ -14,13 +14,15 @@
 		966C8E7E18CF850B000D31A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C8E7D18CF850B000D31A3 /* main.m */; };
 		966C8E8218CF850B000D31A3 /* AmbulareAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C8E8118CF850B000D31A3 /* AmbulareAppDelegate.m */; };
 		966C8E8518CF850B000D31A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966C8E8318CF850B000D31A3 /* Main.storyboard */; };
-		966C8E8818CF850B000D31A3 /* AmbulareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C8E8718CF850B000D31A3 /* AmbulareViewController.m */; };
 		966C8E8A18CF850B000D31A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966C8E8918CF850B000D31A3 /* Images.xcassets */; };
 		966C8E9118CF850B000D31A3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966C8E9018CF850B000D31A3 /* XCTest.framework */; };
 		966C8E9218CF850B000D31A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966C8E7118CF850B000D31A3 /* Foundation.framework */; };
 		966C8E9318CF850B000D31A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966C8E7518CF850B000D31A3 /* UIKit.framework */; };
 		966C8E9B18CF850B000D31A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 966C8E9918CF850B000D31A3 /* InfoPlist.strings */; };
 		966C8E9D18CF850B000D31A3 /* AmbulareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C8E9C18CF850B000D31A3 /* AmbulareTests.m */; };
+		966C8EA918CF897F000D31A3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C8EA818CF897F000D31A3 /* Default@2x.png */; };
+		966C8EAC18CF8E52000D31A3 /* AmbulareHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C8EAB18CF8E52000D31A3 /* AmbulareHomeViewController.m */; };
+		966C8EAF18CF8F7A000D31A3 /* AmbularePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C8EAE18CF8F7A000D31A3 /* AmbularePageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +47,17 @@
 		966C8E8018CF850B000D31A3 /* AmbulareAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AmbulareAppDelegate.h; sourceTree = "<group>"; };
 		966C8E8118CF850B000D31A3 /* AmbulareAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmbulareAppDelegate.m; sourceTree = "<group>"; };
 		966C8E8418CF850B000D31A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		966C8E8618CF850B000D31A3 /* AmbulareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AmbulareViewController.h; sourceTree = "<group>"; };
-		966C8E8718CF850B000D31A3 /* AmbulareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmbulareViewController.m; sourceTree = "<group>"; };
 		966C8E8918CF850B000D31A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		966C8E8F18CF850B000D31A3 /* AmbulareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmbulareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		966C8E9018CF850B000D31A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		966C8E9818CF850B000D31A3 /* AmbulareTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AmbulareTests-Info.plist"; sourceTree = "<group>"; };
 		966C8E9A18CF850B000D31A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		966C8E9C18CF850B000D31A3 /* AmbulareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmbulareTests.m; sourceTree = "<group>"; };
+		966C8EA818CF897F000D31A3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../../../../../Desktop/Default@2x.png"; sourceTree = "<group>"; };
+		966C8EAA18CF8E52000D31A3 /* AmbulareHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbulareHomeViewController.h; sourceTree = SOURCE_ROOT; };
+		966C8EAB18CF8E52000D31A3 /* AmbulareHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmbulareHomeViewController.m; sourceTree = SOURCE_ROOT; };
+		966C8EAD18CF8F7A000D31A3 /* AmbularePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbularePageViewController.h; sourceTree = "<group>"; };
+		966C8EAE18CF8F7A000D31A3 /* AmbularePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmbularePageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +117,13 @@
 		966C8E7718CF850B000D31A3 /* Ambulare */ = {
 			isa = PBXGroup;
 			children = (
+				966C8EAA18CF8E52000D31A3 /* AmbulareHomeViewController.h */,
+				966C8EAB18CF8E52000D31A3 /* AmbulareHomeViewController.m */,
+				966C8EAD18CF8F7A000D31A3 /* AmbularePageViewController.h */,
+				966C8EAE18CF8F7A000D31A3 /* AmbularePageViewController.m */,
 				966C8E8018CF850B000D31A3 /* AmbulareAppDelegate.h */,
 				966C8E8118CF850B000D31A3 /* AmbulareAppDelegate.m */,
 				966C8E8318CF850B000D31A3 /* Main.storyboard */,
-				966C8E8618CF850B000D31A3 /* AmbulareViewController.h */,
-				966C8E8718CF850B000D31A3 /* AmbulareViewController.m */,
 				966C8E8918CF850B000D31A3 /* Images.xcassets */,
 				966C8E7818CF850B000D31A3 /* Supporting Files */,
 			);
@@ -129,6 +136,7 @@
 				966C8E7918CF850B000D31A3 /* Ambulare-Info.plist */,
 				966C8E7A18CF850B000D31A3 /* InfoPlist.strings */,
 				966C8E7D18CF850B000D31A3 /* main.m */,
+				966C8EA818CF897F000D31A3 /* Default@2x.png */,
 				966C8E7F18CF850B000D31A3 /* Ambulare-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -229,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966C8EA918CF897F000D31A3 /* Default@2x.png in Resources */,
 				966C8E8A18CF850B000D31A3 /* Images.xcassets in Resources */,
 				966C8E7C18CF850B000D31A3 /* InfoPlist.strings in Resources */,
 				966C8E8518CF850B000D31A3 /* Main.storyboard in Resources */,
@@ -250,9 +259,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				966C8E8818CF850B000D31A3 /* AmbulareViewController.m in Sources */,
+				966C8EAF18CF8F7A000D31A3 /* AmbularePageViewController.m in Sources */,
 				966C8E7E18CF850B000D31A3 /* main.m in Sources */,
 				966C8E8218CF850B000D31A3 /* AmbulareAppDelegate.m in Sources */,
+				966C8EAC18CF8E52000D31A3 /* AmbulareHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
