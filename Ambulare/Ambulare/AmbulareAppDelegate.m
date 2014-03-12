@@ -2,7 +2,7 @@
 //  AmbulareAppDelegate.m
 //  Ambulare
 //
-//  Created by Paulo Martins on 11/03/14.
+//  Created by Formando FLAG on 12/03/14.
 //  Copyright (c) 2014 Paulo Martins. All rights reserved.
 //
 
