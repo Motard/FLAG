@@ -28,16 +28,13 @@
 - (IBAction)rodar:(id)sender
 {
 
-    
+    self.lightSaber.transform = CGAffineTransformMakeRotation(0);
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^
      {
      
-         self.lightSaber.transform = CGAffineTransformMakeRotation(180);
-     } completion: ^(BOOL finished){
-         if (finished) {
-             [self rodar:sender];
-         }
-     }];
+         self.lightSaber.transform = CGAffineTransformMakeRotation(M_PI);
+         self.lightSaber.transform = CGAffineTransformMakeRotation(M_PI);
+     } completion:nil];
 
     
 }
