@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AmbulareViewController.h"
 
 @interface AmbulareAppDelegate : UIResponder <UIApplicationDelegate>
 

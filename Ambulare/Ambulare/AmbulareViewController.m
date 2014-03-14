@@ -19,24 +19,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //Carrega a imagem HomeScreen para uma ImageVIew
-    //self.ImageViewHome.image = [UIImage imageNamed:@"Default@2x"];
-    
     NSLog(@"viewDidLoad");
     
-    //Tirar a imagem do swipe gesture
+    //Esconder a imagem do swipe gesture
     self.ImageSwipeGesture.alpha = 0;
+
     
-    NSTimer *timer = [[NSTimer alloc]init];
-    //[timer timeInterval
-    
-    [timer performSelector:[self mostraImagem] withObject:nil afterDelay:2.0];
-    
+    self.showSwipeImage = YES;
     
     
     [self mostraImagem];
-    
-    [self escondeImagem];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,32 +38,44 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"viewDidDisappear");
+    self.showSwipeImage = NO;
+}
+
+//Bloco para tratar da imagem de swipe
+//++++++++++++++++++++++++++++++++++++
+
 -(void)mostraImagem
 {
     NSLog(@"mostraImagem");
-    
-    [UIView animateWithDuration:2 delay:1 options:UIViewAnimationOptionCurveEaseIn animations:^
+    if(self.showSwipeImage)
     {
-        self.ImageSwipeGesture.alpha = 1;
+        [UIView animateWithDuration:6 animations:^
+        {
+            self.ImageSwipeGesture.alpha = 1;
+        } completion:^(BOOL finished)
+        {
+            [self escondeImagem];
+        }];
     }
-    completion:Nil];
-    
-    [NSThread sleepForTimeInterval:5];
-    //[self escondeImagem];
 }
 
 -(void)escondeImagem
 {
     NSLog(@"escondeIMagem");
-    [UIView animateWithDuration:2 delay:3 options:UIViewAnimationOptionCurveEaseIn animations:^
+    [UIView animateWithDuration:4 animations:^
     {
         self.ImageSwipeGesture.alpha = 0;
-    }
-    completion:Nil];
-    
-    //[self mostraImagem];
+    } completion:^(BOOL finished) {
+        
+        //Cria 1 Timer que reinicia o ciclo mas espera um X intervalo antes de o fazer  
+        [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(mostraImagem) userInfo:Nil repeats:NO];
+        
+    }];
 }
-
+//++++++++++++++++++++++++++++++++++++
 
 
 @end
