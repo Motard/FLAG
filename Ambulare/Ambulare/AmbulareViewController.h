@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AmbulareViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *ImageViewHome;
+
+
+//@property (weak, nonatomic) IBOutlet UIImageView *ImageViewHome;
 
 
 @end
