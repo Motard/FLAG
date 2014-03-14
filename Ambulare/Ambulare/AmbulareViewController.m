@@ -19,6 +19,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //Carrega a imagem HomeScreen para uma ImageVIew
     self.ImageViewHome.image = [UIImage imageNamed:@"Default@2x"];
 }
 
