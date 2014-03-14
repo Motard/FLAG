@@ -127,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="897" y="96"/>
         </scene>
-        <!--Detail Utilizador View Controller-->
+        <!--Detail Utilizador View Controller - Detalhes-->
         <scene sceneID="dRh-OP-b39">
             <objects>
                 <viewController storyboardIdentifier="Detail" id="tCZ-wy-225" customClass="DetailUtilizadorViewController" sceneMemberID="viewController">
@@ -170,7 +170,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detalhes" id="i3g-Qq-OLJ">
+                        <barButtonItem key="rightBarButtonItem" title="Enviar Email" id="VKC-Ro-ROA">
+                            <connections>
+                                <action selector="EnviarEmail:" destination="tCZ-wy-225" id="oDr-SM-knO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="EnviarEmailButton" destination="VKC-Ro-ROA" id="cuk-H0-DoF"/>
                         <outlet property="ivTipoUtilizador" destination="cyP-fA-j3f" id="vDx-fc-XPJ"/>
                         <outlet property="lCursoUtilizador" destination="cs0-TH-EaM" id="No9-QG-LXs"/>
                         <outlet property="lNomeUtilizador" destination="aRp-SS-Iss" id="Rqf-Jm-HJq"/>
@@ -187,6 +196,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="uj6-oS-nN2" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iLd-a5-Esp">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

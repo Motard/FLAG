@@ -7,6 +7,8 @@
 //
 
 #import "DetailUtilizadorViewController.h"
+//Para os mails
+#import <MessageUI/MessageUI.h>
 
 @interface DetailUtilizadorViewController ()
 
@@ -52,4 +54,48 @@
     self.lPasswordUtilizador.text = self.utilizadorObj.password;
 }
 
+- (IBAction)EnviarEmail:(id)sender
+{
+    if([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mail = [[MFMailComposeViewController alloc]init];
+        
+        mail.mailComposeDelegate = self;
+        
+        
+        NSArray *paraLista = [NSArray arrayWithObjects:@"ola@ola.com",@"exemplo@exemplo.com",nil];
+        
+        [mail setToRecipients:paraLista];
+        
+        [mail setSubject:@"Isto é o assunto"];
+        
+        [mail setMessageBody:@"Isto é o corpo do mail" isHTML:NO];
+        
+        [self presentViewController:mail animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alerta = [[UIAlertView alloc]
+                               initWithTitle:@"Erro" message:@"Oh tu não tens conta de mail!!!" delegate:Nil cancelButtonTitle:@"yaya" otherButtonTitles: nil];
+        
+        [alerta show];
+    }
+}
+
+//Este metodo é chamada quando o utilizador clicar no ok ou cancel na view enviar mail
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    if (result == MFMailComposeResultCancelled)
+    {
+        NSLog(@"Cancelou o mail");
+    }
+    
+    if(result == MFMailComposeResultSent)
+    {
+        NSLog(@"Enviou com sucesso");
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 @end
