@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>97637AF8-F7A6-4EEA-A051-04F3FBB7324C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VarView2View</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>003DB3F9-C088-4ADD-AE75-4B7D480D2DFA</key>
+		<string>https://github.com/Motard/FLAG.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VarView2View/VarView2View.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>003DB3F9-C088-4ADD-AE75-4B7D480D2DFA</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Motard/FLAG.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>003DB3F9-C088-4ADD-AE75-4B7D480D2DFA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>003DB3F9-C088-4ADD-AE75-4B7D480D2DFA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FLAG</string>
+		</dict>
+	</array>
+</dict>
+</plist>
