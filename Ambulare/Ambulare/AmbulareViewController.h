@@ -10,8 +10,6 @@
 
 @interface AmbulareViewController : UIViewController
 
-@property (nonatomic) bool showSwipeImage;
-
 
 @property (weak, nonatomic) IBOutlet UIImageView *ImageSwipeGesture;
 

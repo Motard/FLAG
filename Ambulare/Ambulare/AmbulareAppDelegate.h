@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AmbulareViewController.h"
+
 
 @interface AmbulareAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (nonatomic) bool showSwipeImage;
 
 @end

@@ -22,7 +22,7 @@
 		2C6AC5CF18D063D600F3E4F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C6AC5CD18D063D600F3E4F0 /* InfoPlist.strings */; };
 		2C6AC5D118D063D600F3E4F0 /* AmbulareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AC5D018D063D600F3E4F0 /* AmbulareTests.m */; };
 		2C6AC5DB18D0643700F3E4F0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6AC5DA18D0643700F3E4F0 /* Default@2x.png */; };
-		9611C23018D36F7A001B0AEB /* swipe_gesture.png in Resources */ = {isa = PBXBuildFile; fileRef = 9611C22F18D36F7A001B0AEB /* swipe_gesture.png */; };
+		9648AC2B18D476A600F633AC /* swipe_gesture.png in Resources */ = {isa = PBXBuildFile; fileRef = 9648AC2A18D476A600F633AC /* swipe_gesture.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 		2C6AC5CE18D063D600F3E4F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C6AC5D018D063D600F3E4F0 /* AmbulareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmbulareTests.m; sourceTree = "<group>"; };
 		2C6AC5DA18D0643700F3E4F0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		9611C22F18D36F7A001B0AEB /* swipe_gesture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe_gesture.png; sourceTree = "<group>"; };
+		9648AC2A18D476A600F633AC /* swipe_gesture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe_gesture.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +130,9 @@
 		2C6AC5AC18D063D600F3E4F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9611C22F18D36F7A001B0AEB /* swipe_gesture.png */,
 				2C6AC5DA18D0643700F3E4F0 /* Default@2x.png */,
 				2C6AC5AD18D063D600F3E4F0 /* Ambulare-Info.plist */,
+				9648AC2A18D476A600F633AC /* swipe_gesture.png */,
 				2C6AC5AE18D063D600F3E4F0 /* InfoPlist.strings */,
 				2C6AC5B118D063D600F3E4F0 /* main.m */,
 				2C6AC5B318D063D600F3E4F0 /* Ambulare-Prefix.pch */,
@@ -236,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6AC5DB18D0643700F3E4F0 /* Default@2x.png in Resources */,
-				9611C23018D36F7A001B0AEB /* swipe_gesture.png in Resources */,
+				9648AC2B18D476A600F633AC /* swipe_gesture.png in Resources */,
 				2C6AC5BE18D063D600F3E4F0 /* Images.xcassets in Resources */,
 				2C6AC5B018D063D600F3E4F0 /* InfoPlist.strings in Resources */,
 				2C6AC5B918D063D600F3E4F0 /* Main.storyboard in Resources */,

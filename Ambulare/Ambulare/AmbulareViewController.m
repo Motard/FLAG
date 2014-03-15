@@ -7,12 +7,24 @@
 //
 
 #import "AmbulareViewController.h"
+#import "AmbulareAppDelegate.h"
 
 @interface AmbulareViewController ()
+
+@property (nonatomic) AmbulareAppDelegate *view;
 
 @end
 
 @implementation AmbulareViewController
+
+//-(AmbulareAppDelegate *) view
+//{
+//    if(_view == Nil)
+//    {
+//        _view =(AmbulareAppDelegate *)[[UIApplication sharedApplication] delegate];
+//    }
+//    return _view;
+//}
 
 - (void)viewDidLoad
 {
@@ -24,9 +36,10 @@
     //Esconder a imagem do swipe gesture
     self.ImageSwipeGesture.alpha = 0;
 
-    
-    self.showSwipeImage = YES;
-    
+    //Instanciar a view do tipo AmbulareAppDelegate
+//    if (!self.view)
+//        _view = (AmbulareAppDelegate *)[[UIApplication sharedApplication] delegate];
+//    
     
     [self mostraImagem];
 
@@ -41,7 +54,7 @@
 -(void)viewDidDisappear:(BOOL)animated
 {
     NSLog(@"viewDidDisappear");
-    self.showSwipeImage = NO;
+    self.view.showSwipeImage = NO;
 }
 
 //Bloco para tratar da imagem de swipe
@@ -50,7 +63,7 @@
 -(void)mostraImagem
 {
     NSLog(@"mostraImagem");
-    if(self.showSwipeImage)
+    if(self.view.showSwipeImage)
     {
         [UIView animateWithDuration:6 animations:^
         {

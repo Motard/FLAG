@@ -8,11 +8,16 @@
 
 #import "AmbulareAppDelegate.h"
 
+
 @implementation AmbulareAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    NSLog(@"LaunchApplication");
+    self.showSwipeImage = YES;
+    
+    
     return YES;
 }
 							
@@ -31,9 +36,9 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    AmbulareViewController *xpto = [[AmbulareViewController alloc]init];
-    xpto.showSwipeImage = YES;
-
+    
+    NSLog(@"applicationWillEnterForeground");
+   
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
