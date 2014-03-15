@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ambulare/AmbulareViewController.m"
-            timestampString = "416579803.615877"
+            timestampString = "416596033.82283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "-mostraImagem"
             landmarkType = "5">
          </BreakpointContent>

@@ -11,20 +11,13 @@
 
 @interface AmbulareViewController ()
 
-@property (nonatomic) AmbulareAppDelegate *view;
+@property (nonatomic) bool showSwipeImage;
+@property (nonatomic) AmbulareAppDelegate *delegate;
 
 @end
 
 @implementation AmbulareViewController
 
-//-(AmbulareAppDelegate *) view
-//{
-//    if(_view == Nil)
-//    {
-//        _view =(AmbulareAppDelegate *)[[UIApplication sharedApplication] delegate];
-//    }
-//    return _view;
-//}
 
 - (void)viewDidLoad
 {
@@ -37,11 +30,21 @@
     self.ImageSwipeGesture.alpha = 0;
 
     //Instanciar a view do tipo AmbulareAppDelegate
-//    if (!self.view)
-//        _view = (AmbulareAppDelegate *)[[UIApplication sharedApplication] delegate];
-//    
+    AmbulareAppDelegate *delegate = (AmbulareAppDelegate*)[[UIApplication sharedApplication]delegate];
     
-    [self mostraImagem];
+    self.showSwipeImage = delegate.showSwipeImage;
+    
+    if(self.showSwipeImage)
+    {
+        [self mostraImagem];
+        NSLog(@"TRUE");
+    }
+    else
+    {
+        NSLog(@"FLASE");
+    }
+    
+    
 
 }
 
@@ -54,7 +57,23 @@
 -(void)viewDidDisappear:(BOOL)animated
 {
     NSLog(@"viewDidDisappear");
-    self.view.showSwipeImage = NO;
+    
+    if(self.showSwipeImage)
+    {
+        //Voltar a duplicar a instancia do AppDelegate para alterar o valor do bool
+        AmbulareAppDelegate *delegate = (AmbulareAppDelegate*)[[UIApplication sharedApplication]delegate];
+        self.showSwipeImage = NO;
+        delegate.showSwipeImage = NO;
+    }
+    
+    if(self.showSwipeImage)
+    {
+        NSLog(@"TRUE");
+    }
+    else
+    {
+        NSLog(@"FLASE");
+    }
 }
 
 //Bloco para tratar da imagem de swipe
@@ -63,7 +82,8 @@
 -(void)mostraImagem
 {
     NSLog(@"mostraImagem");
-    if(self.view.showSwipeImage)
+    
+    if(self.showSwipeImage)
     {
         [UIView animateWithDuration:6 animations:^
         {
