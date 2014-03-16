@@ -41,7 +41,7 @@
     }
     else
     {
-        NSLog(@"FLASE");
+        NSLog(@"FALSE");
     }
     
     
@@ -72,7 +72,7 @@
     }
     else
     {
-        NSLog(@"FLASE");
+        NSLog(@"FALSE");
     }
 }
 
