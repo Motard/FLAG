@@ -3,6 +3,8 @@
 #import "PVPark.h"
 #import "PVParkMapOverlayView.h"
 #import "PVParkMapOverlay.h"
+#import "PVAttractionAnnotation.h"
+#import "PVAttractionAnnotacionView.h"
  
 @interface PVParkMapViewController ()
  
@@ -45,6 +47,9 @@
         {
             case PVMapOverlay:
                 [self addOverlay];
+                break;
+            case PVMapPins:
+                [self addAttractionPins];
                 break;
             default:
                 break;
@@ -94,6 +99,33 @@
         return overlayView;
     }
     return nil;
+}
+
+//Bloco das Annotations
+-(void)addAttractionPins
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"MagicMountainAttractions" ofType:@"plist"];
+    NSArray *attractions = [NSArray arrayWithContentsOfFile:filePath];
+    
+    for (NSDictionary *attraction in attractions)
+    {
+        PVAttractionAnnotation *annotation = [[PVAttractionAnnotation alloc]init];
+        CGPoint point = CGPointFromString(attraction[@"location"]);
+        
+        annotation.coordinate = CLLocationCoordinate2DMake(point.x, point.y);
+        annotation.title = attraction[@"name"];
+        annotation.type = [attraction[@"type"] integerValue];
+        annotation.subtitle = attraction[@"subtitle"];
+        
+        [self.mapView addAnnotation:annotation];
+    }
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    PVAttractionAnnotacionView *annotationView = [[PVAttractionAnnotacionView alloc]initWithAnnotation:annotation reuseIdentifier:@"Attraction"];
+    annotationView.canShowCallout = YES;
+    return annotationView;
 }
 
 @end

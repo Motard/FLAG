@@ -33,6 +33,17 @@
 		9642807318D7620E00666ADD /* overlay_park.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642807118D7620E00666ADD /* overlay_park.png */; };
 		9642807418D7620E00666ADD /* overlay_park@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642807218D7620E00666ADD /* overlay_park@2x.png */; };
 		9642807618D77D2000666ADD /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9642807518D77D2000666ADD /* MagicMountain.plist */; };
+		9642807C18D7ABDD00666ADD /* PVAttractionAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642807B18D7ABDD00666ADD /* PVAttractionAnnotation.m */; };
+		9642807F18D7AE4C00666ADD /* PVAttractionAnnotacionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642807E18D7AE4C00666ADD /* PVAttractionAnnotacionView.m */; };
+		9642808818D7B1F100666ADD /* firstaid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642808018D7B1F100666ADD /* firstaid.png */; };
+		9642808918D7B1F100666ADD /* firstaid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642808118D7B1F100666ADD /* firstaid@2x.png */; };
+		9642808A18D7B1F100666ADD /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642808218D7B1F100666ADD /* food.png */; };
+		9642808B18D7B1F100666ADD /* food@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642808318D7B1F100666ADD /* food@2x.png */; };
+		9642808C18D7B1F100666ADD /* ride.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642808418D7B1F100666ADD /* ride.png */; };
+		9642808D18D7B1F100666ADD /* ride@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642808518D7B1F100666ADD /* ride@2x.png */; };
+		9642808E18D7B1F100666ADD /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642808618D7B1F100666ADD /* star.png */; };
+		9642808F18D7B1F100666ADD /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642808718D7B1F100666ADD /* star@2x.png */; };
+		9642809118D7B25E00666ADD /* MagicMountainAttractions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9642809018D7B25E00666ADD /* MagicMountainAttractions.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +93,19 @@
 		9642807118D7620E00666ADD /* overlay_park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_park.png; sourceTree = "<group>"; };
 		9642807218D7620E00666ADD /* overlay_park@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlay_park@2x.png"; sourceTree = "<group>"; };
 		9642807518D77D2000666ADD /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
+		9642807A18D7ABDD00666ADD /* PVAttractionAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVAttractionAnnotation.h; sourceTree = "<group>"; };
+		9642807B18D7ABDD00666ADD /* PVAttractionAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVAttractionAnnotation.m; sourceTree = "<group>"; };
+		9642807D18D7AE4C00666ADD /* PVAttractionAnnotacionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVAttractionAnnotacionView.h; sourceTree = "<group>"; };
+		9642807E18D7AE4C00666ADD /* PVAttractionAnnotacionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVAttractionAnnotacionView.m; sourceTree = "<group>"; };
+		9642808018D7B1F100666ADD /* firstaid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstaid.png; sourceTree = "<group>"; };
+		9642808118D7B1F100666ADD /* firstaid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "firstaid@2x.png"; sourceTree = "<group>"; };
+		9642808218D7B1F100666ADD /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
+		9642808318D7B1F100666ADD /* food@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food@2x.png"; sourceTree = "<group>"; };
+		9642808418D7B1F100666ADD /* ride.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ride.png; sourceTree = "<group>"; };
+		9642808518D7B1F100666ADD /* ride@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ride@2x.png"; sourceTree = "<group>"; };
+		9642808618D7B1F100666ADD /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		9642808718D7B1F100666ADD /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		9642809018D7B25E00666ADD /* MagicMountainAttractions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountainAttractions.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +137,7 @@
 		076BF08D1680457B00ACF08A /* Park Information */ = {
 			isa = PBXGroup;
 			children = (
+				9642809018D7B25E00666ADD /* MagicMountainAttractions.plist */,
 				9642807518D77D2000666ADD /* MagicMountain.plist */,
 			);
 			name = "Park Information";
@@ -121,6 +146,14 @@
 		076BF08F1680459100ACF08A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9642808018D7B1F100666ADD /* firstaid.png */,
+				9642808118D7B1F100666ADD /* firstaid@2x.png */,
+				9642808218D7B1F100666ADD /* food.png */,
+				9642808318D7B1F100666ADD /* food@2x.png */,
+				9642808418D7B1F100666ADD /* ride.png */,
+				9642808518D7B1F100666ADD /* ride@2x.png */,
+				9642808618D7B1F100666ADD /* star.png */,
+				9642808718D7B1F100666ADD /* star@2x.png */,
 				9642807118D7620E00666ADD /* overlay_park.png */,
 				9642807218D7620E00666ADD /* overlay_park@2x.png */,
 			);
@@ -139,6 +172,10 @@
 		076BF091168045BF00ACF08A /* Annotations */ = {
 			isa = PBXGroup;
 			children = (
+				9642807A18D7ABDD00666ADD /* PVAttractionAnnotation.h */,
+				9642807B18D7ABDD00666ADD /* PVAttractionAnnotation.m */,
+				9642807D18D7AE4C00666ADD /* PVAttractionAnnotacionView.h */,
+				9642807E18D7AE4C00666ADD /* PVAttractionAnnotacionView.m */,
 			);
 			name = Annotations;
 			sourceTree = "<group>";
@@ -320,15 +357,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9642809118D7B25E00666ADD /* MagicMountainAttractions.plist in Resources */,
 				07866ABD165EE2B400D7BB3A /* InfoPlist.strings in Resources */,
+				9642808C18D7B1F100666ADD /* ride.png in Resources */,
 				07866AC5165EE2B400D7BB3A /* Default.png in Resources */,
 				9642807318D7620E00666ADD /* overlay_park.png in Resources */,
+				9642808818D7B1F100666ADD /* firstaid.png in Resources */,
+				9642808E18D7B1F100666ADD /* star.png in Resources */,
 				07866AC7165EE2B400D7BB3A /* Default@2x.png in Resources */,
 				07866AC9165EE2B400D7BB3A /* Default-568h@2x.png in Resources */,
 				07866ACC165EE2B400D7BB3A /* MainStoryboard_iPhone.storyboard in Resources */,
 				9642807418D7620E00666ADD /* overlay_park@2x.png in Resources */,
 				07866ACF165EE2B400D7BB3A /* MainStoryboard_iPad.storyboard in Resources */,
 				9642807618D77D2000666ADD /* MagicMountain.plist in Resources */,
+				9642808B18D7B1F100666ADD /* food@2x.png in Resources */,
+				9642808918D7B1F100666ADD /* firstaid@2x.png in Resources */,
+				9642808F18D7B1F100666ADD /* star@2x.png in Resources */,
+				9642808D18D7B1F100666ADD /* ride@2x.png in Resources */,
+				9642808A18D7B1F100666ADD /* food.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +414,9 @@
 				07866AC3165EE2B400D7BB3A /* PVAppDelegate.m in Sources */,
 				07A98C031663F4E400D49A7A /* PVParkMapViewController.m in Sources */,
 				076BEE5F167EC67300ACF08A /* PVMapOptionsViewController.m in Sources */,
+				9642807C18D7ABDD00666ADD /* PVAttractionAnnotation.m in Sources */,
 				356E57F316E1176E00C1D78D /* PVPark.m in Sources */,
+				9642807F18D7AE4C00666ADD /* PVAttractionAnnotacionView.m in Sources */,
 				9642806D18D7554300666ADD /* PVParkMapOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
