@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="onV-CW-ISd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n7G-Cf-TVx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="tXY-pB-FjZ">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="n7G-Cf-TVx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fhM-nq-cCy">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="onV-CW-ISd" kind="relationship" relationship="rootViewController" id="FsL-se-VB1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRj-lG-xJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="179" y="230"/>
+        </scene>
         <!--Ambulare View Controller-->
         <scene sceneID="Wt5-iP-lxj">
             <objects>
@@ -33,6 +48,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="SnV-6V-chb"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="ImageSwipeGesture" destination="rIa-GU-2CB" id="45S-o5-6ed"/>
                     </connections>
@@ -45,26 +61,11 @@
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="jLz-ES-bLW">
                     <connections>
-                        <segue destination="mF7-pW-Xy6" kind="modal" id="dAs-lt-RY7"/>
+                        <segue destination="mF7-pW-Xy6" kind="push" id="RdA-hh-oo4"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-29" y="154"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Nel-eP-sZy">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="98V-WS-dn4" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="flx-HI-zHJ">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="mF7-pW-Xy6" kind="relationship" relationship="rootViewController" id="dXy-NP-52Q"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GF1-dT-nKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="216" y="-700"/>
+            <point key="canvasLocation" x="115" y="1190"/>
         </scene>
         <!--AmbulareGPS Rec View Controller - Start GPS Recorder-->
         <scene sceneID="heN-SL-Az3">
@@ -81,6 +82,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6E-QO-eFG">
                                 <rect key="frame" x="88" y="253" width="144" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.81714365433673475" green="0.70228559985490868" blue="0.72915519347089652" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Gravar Percurso">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -129,6 +131,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="lAviso" destination="6oF-cb-7hv" id="e5Q-Q8-4F2"/>
@@ -139,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds8-Kj-wBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="732" y="4"/>
+            <point key="canvasLocation" x="1060" y="1140"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="q3S-rI-hyx">
@@ -169,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jy0-N4-A1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1072" y="154"/>
+            <point key="canvasLocation" x="-1176" y="310"/>
         </scene>
     </scenes>
     <resources>
@@ -182,7 +185,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Kyw-En-ASm"/>
-        <segue reference="dXy-NP-52Q"/>
+        <segue reference="FsL-se-VB1"/>
     </inferredMetricsTieBreakers>
 </document>

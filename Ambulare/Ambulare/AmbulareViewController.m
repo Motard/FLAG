@@ -26,6 +26,9 @@
     
     NSLog(@"viewDidLoad");
     
+    //esconder a Navigation Controller
+    [self.navigationController setNavigationBarHidden:YES];
+    
     //Esconder a imagem do swipe gesture
     self.ImageSwipeGesture.alpha = 0;
 
