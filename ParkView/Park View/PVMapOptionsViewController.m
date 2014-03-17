@@ -51,6 +51,8 @@
         [self.selectedOptions addObject:[NSNumber numberWithInt:indexPath.row]];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSLog(@"didSelectRow");
 }
 
 @end

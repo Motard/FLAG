@@ -1,6 +1,8 @@
 #import "PVParkMapViewController.h"
 #import "PVMapOptionsViewController.h"
 #import "PVPark.h"
+#import "PVParkMapOverlayView.h"
+#import "PVParkMapOverlay.h"
  
 @interface PVParkMapViewController ()
  
@@ -14,6 +16,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"viewDidLoad");
  
     self.selectedOptions = [NSMutableArray array];
     self.park = [[PVPark alloc] initWithFilename:@"MagicMountain"];
@@ -30,7 +34,22 @@
 }
 
 - (void)loadSelectedOptions {
-    // To be implemented ...
+    //AVISO *** Esta linha de código crasha a app
+    //É suposto remover anotações da mapView
+    //[self.mapView removeAnnotation:self.mapView.annotations];
+    [self.mapView removeOverlay:self.mapView.overlays];
+    
+    for (NSNumber *option in self.selectedOptions)
+    {
+        switch ([option integerValue])
+        {
+            case PVMapOverlay:
+                [self addOverlay];
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -58,6 +77,23 @@
         default:
             break;
     }
+}
+
+-(void)addOverlay
+{
+    PVParkMapOverlay *overlay = [[PVParkMapOverlay alloc]initWithPark:self.park];
+    [self.mapView addOverlay:overlay];
+}
+
+-(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
+{
+    if ([overlay isKindOfClass:PVParkMapOverlay.class])
+    {
+        UIImage *magicMountainImage = [UIImage imageNamed:@"overlay_park"];
+        PVParkMapOverlayView *overlayView = [[PVParkMapOverlayView alloc]initWithOverlay:overlay overlayImage:magicMountainImage];
+        return overlayView;
+    }
+    return nil;
 }
 
 @end

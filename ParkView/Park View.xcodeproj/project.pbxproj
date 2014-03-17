@@ -27,8 +27,12 @@
 		07A2E1DF167988AA00355A96 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A2E1DE167988AA00355A96 /* CoreLocation.framework */; };
 		07A98C031663F4E400D49A7A /* PVParkMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A98C021663F4E400D49A7A /* PVParkMapViewController.m */; };
 		356E57EE16E1165600C1D78D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356E57ED16E1165600C1D78D /* MapKit.framework */; };
-		356E57F016E1175D00C1D78D /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 356E57EF16E1175D00C1D78D /* MagicMountain.plist */; };
 		356E57F316E1176E00C1D78D /* PVPark.m in Sources */ = {isa = PBXBuildFile; fileRef = 356E57F216E1176E00C1D78D /* PVPark.m */; };
+		9642806D18D7554300666ADD /* PVParkMapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642806C18D7554300666ADD /* PVParkMapOverlay.m */; };
+		9642807018D7587C00666ADD /* PVParkMapOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642806F18D7587C00666ADD /* PVParkMapOverlayView.m */; };
+		9642807318D7620E00666ADD /* overlay_park.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642807118D7620E00666ADD /* overlay_park.png */; };
+		9642807418D7620E00666ADD /* overlay_park@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9642807218D7620E00666ADD /* overlay_park@2x.png */; };
+		9642807618D77D2000666ADD /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9642807518D77D2000666ADD /* MagicMountain.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,9 +73,15 @@
 		07A98C011663F4E400D49A7A /* PVParkMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVParkMapViewController.h; sourceTree = "<group>"; };
 		07A98C021663F4E400D49A7A /* PVParkMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVParkMapViewController.m; sourceTree = "<group>"; };
 		356E57ED16E1165600C1D78D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		356E57EF16E1175D00C1D78D /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
 		356E57F116E1176E00C1D78D /* PVPark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVPark.h; sourceTree = "<group>"; };
 		356E57F216E1176E00C1D78D /* PVPark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVPark.m; sourceTree = "<group>"; };
+		9642806B18D7554300666ADD /* PVParkMapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVParkMapOverlay.h; sourceTree = "<group>"; };
+		9642806C18D7554300666ADD /* PVParkMapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVParkMapOverlay.m; sourceTree = "<group>"; };
+		9642806E18D7587C00666ADD /* PVParkMapOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVParkMapOverlayView.h; sourceTree = "<group>"; };
+		9642806F18D7587C00666ADD /* PVParkMapOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVParkMapOverlayView.m; sourceTree = "<group>"; };
+		9642807118D7620E00666ADD /* overlay_park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_park.png; sourceTree = "<group>"; };
+		9642807218D7620E00666ADD /* overlay_park@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlay_park@2x.png"; sourceTree = "<group>"; };
+		9642807518D77D2000666ADD /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +113,7 @@
 		076BF08D1680457B00ACF08A /* Park Information */ = {
 			isa = PBXGroup;
 			children = (
-				356E57EF16E1175D00C1D78D /* MagicMountain.plist */,
+				9642807518D77D2000666ADD /* MagicMountain.plist */,
 			);
 			name = "Park Information";
 			sourceTree = "<group>";
@@ -111,6 +121,8 @@
 		076BF08F1680459100ACF08A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9642807118D7620E00666ADD /* overlay_park.png */,
+				9642807218D7620E00666ADD /* overlay_park@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -134,6 +146,10 @@
 		076BF092168045C900ACF08A /* Overlays */ = {
 			isa = PBXGroup;
 			children = (
+				9642806B18D7554300666ADD /* PVParkMapOverlay.h */,
+				9642806C18D7554300666ADD /* PVParkMapOverlay.m */,
+				9642806E18D7587C00666ADD /* PVParkMapOverlayView.h */,
+				9642806F18D7587C00666ADD /* PVParkMapOverlayView.m */,
 			);
 			name = Overlays;
 			sourceTree = "<group>";
@@ -306,11 +322,13 @@
 			files = (
 				07866ABD165EE2B400D7BB3A /* InfoPlist.strings in Resources */,
 				07866AC5165EE2B400D7BB3A /* Default.png in Resources */,
+				9642807318D7620E00666ADD /* overlay_park.png in Resources */,
 				07866AC7165EE2B400D7BB3A /* Default@2x.png in Resources */,
 				07866AC9165EE2B400D7BB3A /* Default-568h@2x.png in Resources */,
 				07866ACC165EE2B400D7BB3A /* MainStoryboard_iPhone.storyboard in Resources */,
+				9642807418D7620E00666ADD /* overlay_park@2x.png in Resources */,
 				07866ACF165EE2B400D7BB3A /* MainStoryboard_iPad.storyboard in Resources */,
-				356E57F016E1175D00C1D78D /* MagicMountain.plist in Resources */,
+				9642807618D77D2000666ADD /* MagicMountain.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,10 +364,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				07866ABF165EE2B400D7BB3A /* main.m in Sources */,
+				9642807018D7587C00666ADD /* PVParkMapOverlayView.m in Sources */,
 				07866AC3165EE2B400D7BB3A /* PVAppDelegate.m in Sources */,
 				07A98C031663F4E400D49A7A /* PVParkMapViewController.m in Sources */,
 				076BEE5F167EC67300ACF08A /* PVMapOptionsViewController.m in Sources */,
 				356E57F316E1176E00C1D78D /* PVPark.m in Sources */,
+				9642806D18D7554300666ADD /* PVParkMapOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
