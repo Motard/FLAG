@@ -51,6 +51,9 @@
             case PVMapPins:
                 [self addAttractionPins];
                 break;
+            case PVMapRoute:
+                [self addRoute];
+                break;
             default:
                 break;
         }
@@ -90,6 +93,7 @@
     [self.mapView addOverlay:overlay];
 }
 
+
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
     if ([overlay isKindOfClass:PVParkMapOverlay.class])
@@ -98,10 +102,47 @@
         PVParkMapOverlayView *overlayView = [[PVParkMapOverlayView alloc]initWithOverlay:overlay overlayImage:magicMountainImage];
         return overlayView;
     }
+    
+    //      Bloco da Polyline Overlay
+    else if ([overlay isKindOfClass:MKPolyline.class])
+    {
+        MKPolylineView *lineView = [[MKPolylineView alloc]initWithOverlay:overlay];
+        lineView.strokeColor = [UIColor blackColor];
+        
+        return lineView;
+    }
+
     return nil;
 }
 
-//Bloco das Annotations
+//      Bloco da MKPolyline
+//++++++++++++++++++++++++++++++++++++
+-(void)addRoute
+{
+    //      Obter as coordenadas do ficheiro
+    NSString *thePath = [[NSBundle mainBundle] pathForResource:@"EntranceToGoliathRoute" ofType:@"plist"];
+    NSArray *pointsArray = [NSArray arrayWithContentsOfFile:thePath];
+    
+    NSInteger pointsCount = pointsArray.count;
+    
+    CLLocationCoordinate2D pointsToUse[pointsCount];
+    
+    //      Passar as coordenadas do array bruto para um array do tipo CLLocationCoordinate2D
+    for (int i = 0; i < pointsCount; i++)
+    {
+        CGPoint p = CGPointFromString(pointsArray[i]);
+        pointsToUse[i] = CLLocationCoordinate2DMake(p.x, p.y);
+    }
+    
+    //      Criar um objecto do tipo MKPolyline e adicionar à view como Overlay
+    MKPolyline *myPolyline = [MKPolyline polylineWithCoordinates:pointsToUse count:pointsCount];
+    
+    [self.mapView addOverlay:myPolyline];
+}
+
+
+//      Bloco das Annotations
+//++++++++++++++++++++++++++++++++++++
 -(void)addAttractionPins
 {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"MagicMountainAttractions" ofType:@"plist"];
