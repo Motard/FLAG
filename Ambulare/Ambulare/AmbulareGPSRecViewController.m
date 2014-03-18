@@ -1,5 +1,5 @@
 //
-//  AmbulareStartRecViewController.m
+//  AmbulareGPSRecViewController.m
 //  Ambulare
 //
 //  Created by Paulo Martins on 15/03/14.
@@ -27,7 +27,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    //esconder a Navigation Controller
+    //Mostrar a Navigation Controller
     [self.navigationController setNavigationBarHidden:NO];
 }
 
@@ -37,7 +37,8 @@
 	// Do any additional setup after loading the view.
     
     NSLog(@"startRec_viewDidLoad");
-    
+    //Desligar a viewGPSStatus
+    self.vViewGPSStatus.alpha = 0;
     
     //  Bloco do GPS
     //***********************************************
@@ -60,38 +61,78 @@
     NSLog(@"Estou a obter a localização");
     
     
-    
-    CLLocationCoordinate2D  newLocation, oldLocation;
-    newLocation.latitude = 38.707508;
-    newLocation.longitude = -9.136618;
-    
-    oldLocation.latitude = 38.707591;
-    oldLocation.longitude = -9.133719;
-    
+//    
+//    CLLocationCoordinate2D  newLocation, oldLocation;
+//    newLocation.latitude = 38.707508;
+//    newLocation.longitude = -9.136618;
+//    
+//    oldLocation.latitude = 38.707591;
+//    oldLocation.longitude = -9.133719;
+//    
     //Desenhar a polyLine
-    [self drawRouteWithNewLocation:newLocation oldLocation:oldLocation];
+    //[self drawRouteWithNewLocation:newLocation oldLocation:oldLocation];
+    
+    //Invoca o metodo que vai criar "observers" para captar utilizações do keyboard
+    [self registerForKeyboardNotifications];
 }
 
-//-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-//{
-//    if(newLocation != oldLocation)
-//    {
-//        //Obter as coordenadas da nova posição
-//        CLLocationCoordinate2D coordenada;
-//        coordenada.latitude = newLocation.coordinate.latitude;
-//        coordenada.longitude = newLocation.coordinate.longitude;
-//        
-//        //Define uma região baseada nas coordenadas actuais e aplica na mapView
-//        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordenada, 500, 500);
-//        [self.mvMap setRegion:region animated:YES];
-//        
-//        //Mostra as coordenadas na label
-//        self.lcoordenadas.text = [NSString stringWithFormat:@"Lat:%lf  Long:%lf",coordenada.latitude,coordenada.longitude];
-//        
-//        //Desenhar a polyLine
-//        //[self drawRouteWithNewLocation:newLocation oldLocation:oldLocation];
-//    }
-//}
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    if(newLocation != oldLocation)
+    {
+        //Obter as coordenadas da nova posição
+        CLLocationCoordinate2D coordenada;
+        coordenada.latitude = newLocation.coordinate.latitude;
+        coordenada.longitude = newLocation.coordinate.longitude;
+        
+        //Define uma região baseada nas coordenadas actuais e aplica na mapView
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordenada, 500, 500);
+        [self.mvMap setRegion:region animated:YES];
+        
+        //Mostra as coordenadas na label
+        self.lcoordenadas.text = [NSString stringWithFormat:@"Lat:%lf  Long:%lf",coordenada.latitude,coordenada.longitude];
+        
+        //Desenhar a polyLine
+        //[self drawRouteWithNewLocation:newLocation oldLocation:oldLocation];
+    }
+}
+
+//      Bloco para detectar e reagir ao keyboard
+//****************************************************
+
+//Criar observers para detectar quando o keyboard aparece e desaparece e chamar o metodo apropriado
+-(void) registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+//Para quando teclado aparece
+-(void)keyboardWasShown:(NSNotification *) aNotification
+{
+    CGRect frameDaLabel = self.vBottomViewGetNomePercurso.frame;
+    
+    NSLog(@"keyboardWasShown");
+    
+    //Obter a altura e largura do teclado
+    NSDictionary *info = [aNotification userInfo];
+    CGSize kbSize =[[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    //Reposicionar a view
+    self.vBottomViewGetNomePercurso.frame = CGRectMake(frameDaLabel.origin.x, frameDaLabel.origin.y - kbSize.height, frameDaLabel.size.width, frameDaLabel.size.height);
+}
+
+//Para quando o teclado desaparece
+-(void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    CGRect frameDaLabel = self.vBottomViewGetNomePercurso.frame;
+    
+    self.vBottomViewGetNomePercurso.frame = CGRectMake(frameDaLabel.origin.x, 340.0, frameDaLabel.size.width, frameDaLabel.size.height);
+}
+//____________________________________________dead end___________________________________________________________________
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -102,9 +143,16 @@
 
 - (IBAction)GravarPercurso:(id)sender
 {
+    //      Desligar o teclado
+    [self.tfNomePercurso resignFirstResponder];
     
     if ([self.tfNomePercurso.text length] == 0)
         self.lAviso.text = @"Necessário introduzir nome para a rota";
+    else
+    {
+        self.vBottomViewGetNomePercurso.alpha = 0;
+        self.vViewGPSStatus.alpha = 1;
+    }
 }
 
 -(void)drawRouteWithNewLocation:(CLLocationCoordinate2D) newLocation oldLocation: (CLLocationCoordinate2D) oldLocation
@@ -118,35 +166,35 @@
         pointsToUse[0] = CLLocationCoordinate2DMake(newLocation.latitude, newLocation.longitude);
         pointsToUse[1] = CLLocationCoordinate2DMake(oldLocation.latitude, oldLocation.longitude);
     
-        MKPolyline *myPolyline = [MKPolyline polylineWithCoordinates:pointsToUse count:2];
-        [self.mvMap addOverlay:myPolyline];
+        //MKPolyline *myPolyline = [MKPolyline polylineWithCoordinates:pointsToUse count:2];
+        //[self.mvMap addOverlay:myPolyline];
     
     
 }
 
 
-- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
-{
-    MKOverlayView* overlayView = nil;
-    
-    if(overlay == self.routeLine)
-    {
-        //if we have not yet created an overlay view for this overlay, create it now.
-        if(nil == self.routeLineView)
-        {
-            self.routeLineView = [[[MKPolylineView alloc] initWithPolyline:self.routeLine] autorelease];
-            self.routeLineView.fillColor = [UIColor redColor];
-            self.routeLineView.strokeColor = [UIColor redColor];
-            self.routeLineView.lineWidth = 3;
-        }
-        
-        overlayView = self.routeLineView;
-        
-    }
-    
-    return overlayView;
-    
-}
+//- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
+//{
+//    MKOverlayView* overlayView = nil;
+//    
+//    if(overlay == self.routeLine)
+//    {
+//        //if we have not yet created an overlay view for this overlay, create it now.
+//        if(nil == self.routeLineView)
+//        {
+//            self.routeLineView = [[[MKPolylineView alloc] initWithPolyline:self.routeLine] autorelease];
+//            self.routeLineView.fillColor = [UIColor redColor];
+//            self.routeLineView.strokeColor = [UIColor redColor];
+//            self.routeLineView.lineWidth = 3;
+//        }
+//        
+//        overlayView = self.routeLineView;
+//        
+//    }
+//    
+//    return overlayView;
+//    
+//}
 
 //- (void)addRoute {
 //    NSString *thePath = [[NSBundle mainBundle] pathForResource:@"EntranceToGoliathRoute" ofType:@"plist"];

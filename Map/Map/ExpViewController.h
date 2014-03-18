@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface ExpViewController : UIViewController
+@interface ExpViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate>
+
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeSegmentedControl;
 
 @end

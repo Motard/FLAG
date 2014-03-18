@@ -22,6 +22,7 @@
 		2C6AC5CF18D063D600F3E4F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C6AC5CD18D063D600F3E4F0 /* InfoPlist.strings */; };
 		2C6AC5D118D063D600F3E4F0 /* AmbulareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AC5D018D063D600F3E4F0 /* AmbulareTests.m */; };
 		2C6AC5DB18D0643700F3E4F0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6AC5DA18D0643700F3E4F0 /* Default@2x.png */; };
+		9608EFE718D8A2B00000DA32 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9608EFE618D8A2B00000DA32 /* background1.png */; };
 		9648AC2B18D476A600F633AC /* swipe_gesture.png in Resources */ = {isa = PBXBuildFile; fileRef = 9648AC2A18D476A600F633AC /* swipe_gesture.png */; };
 		9648AC6F18D4D80700F633AC /* AmbulareGPSRecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648AC6E18D4D80700F633AC /* AmbulareGPSRecViewController.m */; };
 		9648AC7118D5F50200F633AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9648AC7018D5F50200F633AC /* CoreLocation.framework */; };
@@ -59,6 +60,7 @@
 		2C6AC5CE18D063D600F3E4F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C6AC5D018D063D600F3E4F0 /* AmbulareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmbulareTests.m; sourceTree = "<group>"; };
 		2C6AC5DA18D0643700F3E4F0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9608EFE618D8A2B00000DA32 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
 		9648AC2A18D476A600F633AC /* swipe_gesture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe_gesture.png; sourceTree = "<group>"; };
 		9648AC6D18D4D80700F633AC /* AmbulareGPSRecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbulareGPSRecViewController.h; sourceTree = "<group>"; };
 		9648AC6E18D4D80700F633AC /* AmbulareGPSRecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmbulareGPSRecViewController.m; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		2C6AC5AC18D063D600F3E4F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9608EFE618D8A2B00000DA32 /* background1.png */,
 				2C6AC5DA18D0643700F3E4F0 /* Default@2x.png */,
 				2C6AC5AD18D063D600F3E4F0 /* Ambulare-Info.plist */,
 				9648AC2A18D476A600F633AC /* swipe_gesture.png */,
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6AC5DB18D0643700F3E4F0 /* Default@2x.png in Resources */,
+				9608EFE718D8A2B00000DA32 /* background1.png in Resources */,
 				9648AC2B18D476A600F633AC /* swipe_gesture.png in Resources */,
 				2C6AC5BE18D063D600F3E4F0 /* Images.xcassets in Resources */,
 				2C6AC5B018D063D600F3E4F0 /* InfoPlist.strings in Resources */,

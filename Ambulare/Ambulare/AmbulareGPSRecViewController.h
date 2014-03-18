@@ -1,5 +1,5 @@
 //
-//  AmbulareStartRecViewController.h
+//  AmbulareGPSRecViewController.h
 //  Ambulare
 //
 //  Created by Paulo Martins on 15/03/14.
@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfNomePercurso;
 @property (weak, nonatomic) IBOutlet UILabel *lAviso;
 @property (weak, nonatomic) IBOutlet UILabel *lcoordenadas;
+@property (weak, nonatomic) IBOutlet UIView *vBottomViewGetNomePercurso;
+@property (weak, nonatomic) IBOutlet UIView *vViewGPSStatus;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mvMap;
 

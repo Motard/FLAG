@@ -21,6 +21,7 @@
 		9608EFD118D8688D0000DA32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9608EFB318D8688D0000DA32 /* UIKit.framework */; };
 		9608EFD918D8688D0000DA32 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9608EFD718D8688D0000DA32 /* InfoPlist.strings */; };
 		9608EFDB18D8688D0000DA32 /* MapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9608EFDA18D8688D0000DA32 /* MapTests.m */; };
+		9608EFE518D868B70000DA32 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9608EFE418D868B70000DA32 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		9608EFD618D8688D0000DA32 /* MapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MapTests-Info.plist"; sourceTree = "<group>"; };
 		9608EFD818D8688D0000DA32 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9608EFDA18D8688D0000DA32 /* MapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapTests.m; sourceTree = "<group>"; };
+		9608EFE418D868B70000DA32 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9608EFE518D868B70000DA32 /* MapKit.framework in Frameworks */,
 				9608EFB218D8688D0000DA32 /* CoreGraphics.framework in Frameworks */,
 				9608EFB418D8688D0000DA32 /* UIKit.framework in Frameworks */,
 				9608EFB018D8688D0000DA32 /* Foundation.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		9608EFAE18D8688D0000DA32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9608EFE418D868B70000DA32 /* MapKit.framework */,
 				9608EFAF18D8688D0000DA32 /* Foundation.framework */,
 				9608EFB118D8688D0000DA32 /* CoreGraphics.framework */,
 				9608EFB318D8688D0000DA32 /* UIKit.framework */,
