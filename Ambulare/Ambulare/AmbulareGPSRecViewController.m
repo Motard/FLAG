@@ -133,6 +133,88 @@
 //____________________________________________dead end___________________________________________________________________
 
 
+//      Bloco para contar o tempo
+//****************************************************
+-(void)timePassed
+{
+    NSDate *beginTime = [[NSDate alloc]init];
+    
+    
+    //criar uma async track
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
+
+    
+    dispatch_async(queue, ^
+                   {
+                       int oldTimeInterval = 0;
+                       
+                       
+                       while (1)
+                   {
+                       NSDate *actualTime = [[NSDate alloc]init];
+                       NSTimeInterval timeInterval = [actualTime timeIntervalSinceDate:beginTime];
+                       
+                       int timeIntervalAbsolute = timeInterval;
+                       
+                       if (timeIntervalAbsolute == oldTimeInterval)
+                       {
+                           continue;
+                       }
+                       
+                       NSLog(@"%d",timeIntervalAbsolute);
+                       
+                       
+                       oldTimeInterval = timeIntervalAbsolute;
+                       
+                       dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                           int timeIntervalSeconds = 0;
+                           int timeIntervalMinutes = 0;
+                           int timeIntervalHours = 0;
+
+                           //timeIntervalSeconds = timeIntervalAbsolute;
+                           
+                           if (timeIntervalAbsolute>60)
+                           {
+                               timeIntervalSeconds = timeIntervalAbsolute;
+                               do
+                               {
+                                   timeIntervalSeconds = timeIntervalSeconds-60;
+                               }while (timeIntervalSeconds>60);
+                           }else
+                               timeIntervalSeconds = timeIntervalAbsolute;
+                           
+                           if ((timeIntervalAbsolute/60)>0)
+                           {
+                               timeIntervalMinutes = timeIntervalAbsolute;
+                               do
+                               {
+                                   timeIntervalMinutes = timeIntervalMinutes/60;
+                               }while (timeIntervalMinutes >60);
+                           }
+                           
+                           
+                           
+                        if (timeIntervalSeconds > 9)
+                            NSString * seconds = [NSString ]
+                        self.lTotalTimeTracked.text = [NSString stringWithFormat:@"%d:%d:%d",timeIntervalHours,timeIntervalMinutes,timeIntervalSeconds];
+                           
+                       });
+                       
+                       
+                   }
+                       
+    });
+    
+    
+    
+    
+ 
+
+   
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -152,6 +234,8 @@
     {
         self.vBottomViewGetNomePercurso.alpha = 0;
         self.vViewGPSStatus.alpha = 1;
+        
+        [self timePassed];
     }
 }
 

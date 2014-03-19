@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="iIx-yg-A8j">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="522"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swipe_gesture.png" translatesAutoresizingMaskIntoConstraints="NO" id="rIa-GU-2CB">
@@ -49,6 +49,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SnV-6V-chb"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ImageSwipeGesture" destination="rIa-GU-2CB" id="45S-o5-6ed"/>
                     </connections>
@@ -70,6 +71,7 @@
         <!--AmbulareGPS Rec View Controller - Start GPS Recorder-->
         <scene sceneID="heN-SL-Az3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ds8-Kj-wBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="mF7-pW-Xy6" customClass="AmbulareGPSRecViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dwx-rH-eZF"/>
@@ -222,7 +224,11 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="lAVGPace" destination="9U0-aM-TpG" id="9RT-wK-sEp"/>
                         <outlet property="lAviso" destination="6oF-cb-7hv" id="e5Q-Q8-4F2"/>
+                        <outlet property="lDistance" destination="vdq-xY-n8b" id="O3u-QW-n0g"/>
+                        <outlet property="lSpeed" destination="WAs-GD-z6Y" id="Ycx-Lp-oN6"/>
+                        <outlet property="lTotalTimeTracked" destination="4P6-We-h9b" id="fGi-d5-W8e"/>
                         <outlet property="lcoordenadas" destination="qQH-Oe-pnw" id="Om0-ni-qaj"/>
                         <outlet property="mvMap" destination="PJz-bh-NjH" id="ob5-LX-HZL"/>
                         <outlet property="tfNomePercurso" destination="M9p-Pp-mMT" id="A8s-eA-QNf"/>
@@ -230,7 +236,6 @@
                         <outlet property="vViewGPSStatus" destination="GZE-5G-ipi" id="nBw-M5-JkM"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ds8-Kj-wBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1060" y="1140"/>
         </scene>
