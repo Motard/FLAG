@@ -130,13 +130,15 @@
     
     self.vBottomViewGetNomePercurso.frame = CGRectMake(frameDaLabel.origin.x, 340.0, frameDaLabel.size.width, frameDaLabel.size.height);
 }
-//____________________________________________dead end___________________________________________________________________
+//____________________________________________________________________________________________
+//____________________________________________dead end________________________________________
 
 
-//      Bloco para contar o tempo
+//      BLOCO PARA CONRA O TEMPO
 //****************************************************
 -(void)timePassed
 {
+    //Obter o tempo inicial
     NSDate *beginTime = [[NSDate alloc]init];
     
     
@@ -145,15 +147,18 @@
 
     
     dispatch_async(queue, ^
-                   {
-                       int oldTimeInterval = 0;
+    {
+                    int oldTimeInterval = 0;
+                    NSDate *actualTime;
                        
-                       
-                       while (1)
-                   {
-                       NSDate *actualTime = [[NSDate alloc]init];
+                    // Alterar para uma condição contar enquanto estiver a gravar
+                    while (1)
+                    {
+                       //       Contar o tempo em cada iteração do ciclo
+                       actualTime = [[NSDate alloc]init];
                        NSTimeInterval timeInterval = [actualTime timeIntervalSinceDate:beginTime];
                        
+                        //      Converter o tipo NSTimeInterval em int(corta as 4 casas decimais do NSTimeInterval)
                        int timeIntervalAbsolute = timeInterval;
                        
                        if (timeIntervalAbsolute == oldTimeInterval)
@@ -166,53 +171,76 @@
                        
                        oldTimeInterval = timeIntervalAbsolute;
                        
+                        //Como é necessário efetuar tarefas UI volta-se a chamar a tread main_queue
                        dispatch_async(dispatch_get_main_queue(), ^
                        {
                            int timeIntervalSeconds = 0;
                            int timeIntervalMinutes = 0;
                            int timeIntervalHours = 0;
+                           NSString *timeSeconds, *timeMInutes, *timeHours;
 
-                           //timeIntervalSeconds = timeIntervalAbsolute;
-                           
-                           if (timeIntervalAbsolute>60)
+                           //Calcular os segundos, minutos e horas
+                           if (timeIntervalAbsolute > 60)
                            {
                                timeIntervalSeconds = timeIntervalAbsolute;
                                do
                                {
-                                   timeIntervalSeconds = timeIntervalSeconds-60;
-                               }while (timeIntervalSeconds>60);
+                                   timeIntervalSeconds = timeIntervalSeconds - 60;
+                               }while (timeIntervalSeconds > 60);
                            }else
                                timeIntervalSeconds = timeIntervalAbsolute;
                            
-                           if ((timeIntervalAbsolute/60)>0)
+                           
+                           if ((timeIntervalAbsolute/60) > 0)
                            {
-                               timeIntervalMinutes = timeIntervalAbsolute;
-                               do
+                               timeIntervalMinutes = timeIntervalAbsolute/60;
+                               
+                               while (timeIntervalMinutes > 60)
                                {
-                                   timeIntervalMinutes = timeIntervalMinutes/60;
-                               }while (timeIntervalMinutes >60);
+                                   timeIntervalMinutes = timeIntervalMinutes - 60;
+                               }
+                               NSLog(@"timeINtervalMinutes - %d",timeIntervalMinutes);
                            }
                            
+                           if (((timeIntervalAbsolute / 60) / 60) > 0)
+                           {
+                               timeIntervalHours = ((timeIntervalAbsolute / 60) / 60);
+                               while (timeIntervalHours > 24)
+                               {
+                                   timeIntervalHours = timeIntervalHours - 24 ;
+                               } ;
+                           }
                            
+                           if(timeIntervalSeconds == 60)
+                               timeIntervalSeconds = 0;
+                           if(timeIntervalMinutes == 60)
+                               timeIntervalMinutes = 0;
+                           if(timeIntervalHours == 24)
+                               timeIntervalHours = 0;
                            
-                        if (timeIntervalSeconds > 9)
-                            NSString * seconds = [NSString ]
-                        self.lTotalTimeTracked.text = [NSString stringWithFormat:@"%d:%d:%d",timeIntervalHours,timeIntervalMinutes,timeIntervalSeconds];
+                           if (timeIntervalSeconds < 10)
+                               timeSeconds = [NSString stringWithFormat:@"0%d",timeIntervalSeconds];
+                           else
+                            timeSeconds = [NSString stringWithFormat:@"%d",timeIntervalSeconds];
+                           
+                           if(timeIntervalMinutes < 10)
+                               timeMInutes = [NSString stringWithFormat:@"0%d",timeIntervalMinutes];
+                           else
+                               timeMInutes = [NSString stringWithFormat:@"%d",timeIntervalMinutes];
+                           
+                           if(timeIntervalHours < 10)
+                               timeHours = [NSString stringWithFormat:@"0%d",timeIntervalHours];
+                           else
+                               timeHours = [NSString stringWithFormat:@"%d",timeIntervalHours];
+                            
+                           self.lTotalTimeTracked.text = [NSString stringWithFormat:@"%@:%@:%@",timeHours,timeMInutes,timeSeconds];
                            
                        });
-                       
-                       
                    }
-                       
     });
-    
-    
-    
-    
- 
-
-   
 }
+//____________________________________________________________________________________________
+//____________________________________________dead end________________________________________
 
 
 

@@ -71,7 +71,6 @@
         <!--AmbulareGPS Rec View Controller - Start GPS Recorder-->
         <scene sceneID="heN-SL-Az3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ds8-Kj-wBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="mF7-pW-Xy6" customClass="AmbulareGPSRecViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dwx-rH-eZF"/>
@@ -236,6 +235,7 @@
                         <outlet property="vViewGPSStatus" destination="GZE-5G-ipi" id="nBw-M5-JkM"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ds8-Kj-wBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1060" y="1140"/>
         </scene>
