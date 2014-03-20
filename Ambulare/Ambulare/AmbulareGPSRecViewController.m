@@ -11,6 +11,9 @@
 @interface AmbulareGPSRecViewController ()
 
 @property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) double distanciaRota;
+@property (nonatomic) bool record;
+@property (nonatomic) int timeIntervalAbsolute;
 
 @end
 
@@ -39,6 +42,7 @@
     NSLog(@"startRec_viewDidLoad");
     //Desligar a viewGPSStatus
     self.vViewGPSStatus.alpha = 0;
+    
     
     //  Bloco do GPS
     //***********************************************
@@ -94,6 +98,44 @@
         
         //Desenhar a polyLine
         //[self drawRouteWithNewLocation:newLocation oldLocation:oldLocation];
+        
+        
+        //Calcular a distancia entre os dois pontos
+        //***************************************************
+        CLLocationDistance distance = [oldLocation distanceFromLocation:newLocation];
+        
+        //      Apresentar a distancia na label Distance
+        if(self.record)
+        {
+            self.distanciaRota += distance;
+            if (self.distanciaRota <= 999)
+            {
+                self.lUnidadeDistancia.text = @"mt";
+                self.lDistance.text = [NSString stringWithFormat:@"%3.0f",self.distanciaRota];
+            }
+            else
+            {
+                self.lUnidadeDistancia.text = @"Km";
+                self.lDistance.text = [NSString stringWithFormat:@"%3.1f",self.distanciaRota/1000];
+            }
+        }
+        
+        NSLog(@"%.3f",distance);
+        NSLog(@"%.3f",self.distanciaRota);
+        
+        //Obter a velocidade
+        double speed = newLocation.speed; //isto vem em metros/segundo
+        speed = speed * 3.6;
+        self.lSpeed.text = [NSString stringWithFormat:@"%.2f",speed];
+        
+        NSLog(@"SPEED - %f",speed);
+        
+        //      Obter a média
+        NSTimeInterval sinceLastUpdate = [newLocation.timestamp timeIntervalSinceDate:oldLocation.timestamp];
+        double avg = (distance/sinceLastUpdate)*3.6;
+        self.lAVGPace.text = [NSString stringWithFormat:@"%.2f",avg];
+        
+        NSLog(@"AVG - %f",avg);
     }
 }
 
@@ -134,7 +176,7 @@
 //____________________________________________dead end________________________________________
 
 
-//      BLOCO PARA CONRA O TEMPO
+//      BLOCO PARA CONTAR O TEMPO
 //****************************************************
 -(void)timePassed
 {
@@ -159,17 +201,17 @@
                        NSTimeInterval timeInterval = [actualTime timeIntervalSinceDate:beginTime];
                        
                         //      Converter o tipo NSTimeInterval em int(corta as 4 casas decimais do NSTimeInterval)
-                       int timeIntervalAbsolute = timeInterval;
+                       self.timeIntervalAbsolute = timeInterval;
                        
-                       if (timeIntervalAbsolute == oldTimeInterval)
+                       if (self.timeIntervalAbsolute == oldTimeInterval)
                        {
                            continue;
                        }
                        
-                       NSLog(@"%d",timeIntervalAbsolute);
+                       NSLog(@"%d",self.timeIntervalAbsolute);
                        
                        
-                       oldTimeInterval = timeIntervalAbsolute;
+                       oldTimeInterval = self.timeIntervalAbsolute;
                        
                         //Como é necessário efetuar tarefas UI volta-se a chamar a tread main_queue
                        dispatch_async(dispatch_get_main_queue(), ^
@@ -180,20 +222,20 @@
                            NSString *timeSeconds, *timeMInutes, *timeHours;
 
                            //Calcular os segundos, minutos e horas
-                           if (timeIntervalAbsolute > 60)
+                           if (self.timeIntervalAbsolute > 60)
                            {
-                               timeIntervalSeconds = timeIntervalAbsolute;
+                               timeIntervalSeconds = self.timeIntervalAbsolute;
                                do
                                {
                                    timeIntervalSeconds = timeIntervalSeconds - 60;
                                }while (timeIntervalSeconds > 60);
                            }else
-                               timeIntervalSeconds = timeIntervalAbsolute;
+                               timeIntervalSeconds = self.timeIntervalAbsolute;
                            
                            
-                           if ((timeIntervalAbsolute/60) > 0)
+                           if ((self.timeIntervalAbsolute/60) > 0)
                            {
-                               timeIntervalMinutes = timeIntervalAbsolute/60;
+                               timeIntervalMinutes = self.timeIntervalAbsolute/60;
                                
                                while (timeIntervalMinutes > 60)
                                {
@@ -202,9 +244,9 @@
                                NSLog(@"timeINtervalMinutes - %d",timeIntervalMinutes);
                            }
                            
-                           if (((timeIntervalAbsolute / 60) / 60) > 0)
+                           if (((self.timeIntervalAbsolute / 60) / 60) > 0)
                            {
-                               timeIntervalHours = ((timeIntervalAbsolute / 60) / 60);
+                               timeIntervalHours = ((self.timeIntervalAbsolute / 60) / 60);
                                while (timeIntervalHours > 24)
                                {
                                    timeIntervalHours = timeIntervalHours - 24 ;
@@ -262,6 +304,9 @@
     {
         self.vBottomViewGetNomePercurso.alpha = 0;
         self.vViewGPSStatus.alpha = 1;
+        
+        //Passar a variavél record a true
+        self.record = YES;
         
         [self timePassed];
     }

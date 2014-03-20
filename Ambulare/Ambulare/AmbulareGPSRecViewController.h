@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lAVGPace;
 @property (weak, nonatomic) IBOutlet UILabel *lSpeed;
 @property (weak, nonatomic) IBOutlet UILabel *lDistance;
+@property (weak, nonatomic) IBOutlet UILabel *lUnidadeDistancia;
 
 
 
