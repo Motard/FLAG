@@ -14,10 +14,20 @@
 @property (nonatomic) double distanciaRota;
 @property (nonatomic) bool record;
 @property (nonatomic) int timeIntervalAbsolute;
+@property (nonatomic) NSMutableArray *avgSpeedArr;
 
 @end
 
 @implementation AmbulareGPSRecViewController
+
+-(NSMutableArray *) avgSpeedArr
+{
+    if (!_avgSpeedArr)
+    {
+        _avgSpeedArr = [[NSMutableArray alloc]init];
+    }
+    return _avgSpeedArr;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -82,6 +92,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    
     if(newLocation != oldLocation)
     {
         //Obter as coordenadas da nova posição
@@ -133,7 +144,22 @@
         //      Obter a média
         NSTimeInterval sinceLastUpdate = [newLocation.timestamp timeIntervalSinceDate:oldLocation.timestamp];
         double avg = (distance/sinceLastUpdate)*3.6;
-        self.lAVGPace.text = [NSString stringWithFormat:@"%.2f",avg];
+        
+        //Porque os arrays não guardam tipos primitivos, tem de se converter o double em NSNumber
+        NSNumber *tempNumber = [[NSNumber alloc]initWithDouble:avg];
+        [self.avgSpeedArr addObject:tempNumber];
+        
+        int count = [self.avgSpeedArr count];
+        double media = 0;
+        
+        for(int i = 0 ; i < count ; i ++ )
+        {
+            media += [[self.avgSpeedArr objectAtIndex:i] doubleValue];
+        }
+        
+        media = media / count;
+        
+        self.lAVGPace.text = [NSString stringWithFormat:@"%.2f",media];
         
         NSLog(@"AVG - %f",avg);
     }
