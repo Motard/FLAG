@@ -152,15 +152,13 @@
         int count = [self.avgSpeedArr count];
         double media = 0;
         
-        for(int i = 0 ; i < count ; i ++ )
+        for(int i = 1 ; i < count ; i ++ )
         {
             media += [[self.avgSpeedArr objectAtIndex:i] doubleValue];
         }
         
-        media = media / count;
-        
+        media = media / (count-1);
         self.lAVGPace.text = [NSString stringWithFormat:@"%.2f",media];
-        
         NSLog(@"AVG - %f",avg);
     }
 }
