@@ -19,34 +19,52 @@
             </objects>
             <point key="canvasLocation" x="179" y="230"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="koq-jF-OtE">
+        <!--Ambulare Show Rotas View Controller-->
+        <scene sceneID="JXf-7e-0TX">
             <objects>
-                <tableViewController id="iFY-v7-2tQ" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9pB-id-4ua">
+                <tableViewController id="rry-pc-tyG" customClass="AmbulareShowRotasViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xLe-fh-6Eq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cYH-3k-hVl">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0Qz-p0-ANv">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cYH-3k-hVl" id="8vJ-Lg-7DX">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Qz-p0-ANv" id="gQg-zD-Epb">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="iFY-v7-2tQ" id="0F8-LA-3Xr"/>
-                            <outlet property="delegate" destination="iFY-v7-2tQ" id="tVk-bx-pHw"/>
+                            <outlet property="dataSource" destination="rry-pc-tyG" id="Vi8-zV-Abn"/>
+                            <outlet property="delegate" destination="rry-pc-tyG" id="ecW-6q-g8S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="tUc-CJ-FFm"/>
+                    <navigationItem key="navigationItem" id="cEx-BC-EZ7"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a5S-ZY-AV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BOr-58-Qg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671" y="1068"/>
+            <point key="canvasLocation" x="-555" y="1160"/>
+        </scene>
+        <!--Ambulare Rota Detail View Controller-->
+        <scene sceneID="rLU-lQ-ZmO">
+            <objects>
+                <viewController storyboardIdentifier="Detail" id="WP7-bH-j5z" customClass="AmbulareRotaDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AVE-pV-WY4"/>
+                        <viewControllerLayoutGuide type="bottom" id="h4L-YX-fJu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aA9-Eq-y8z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7q5-IU-ISb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-363" y="2069"/>
         </scene>
         <!--Ambulare View Controller-->
         <scene sceneID="Wt5-iP-lxj">
@@ -86,7 +104,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDW-ed-olK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="3yr-TU-pTe">
                     <connections>
-                        <segue destination="iFY-v7-2tQ" kind="push" id="W6P-On-Eb6"/>
+                        <segue destination="rry-pc-tyG" kind="push" id="j37-V5-phX"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="jLz-ES-bLW">

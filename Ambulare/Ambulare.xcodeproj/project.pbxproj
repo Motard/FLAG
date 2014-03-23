@@ -31,6 +31,8 @@
 		9648AC6F18D4D80700F633AC /* AmbulareGPSRecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648AC6E18D4D80700F633AC /* AmbulareGPSRecViewController.m */; };
 		9648AC7118D5F50200F633AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9648AC7018D5F50200F633AC /* CoreLocation.framework */; };
 		9648AC7318D5F51200F633AC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9648AC7218D5F51200F633AC /* MapKit.framework */; };
+		96854FBD18DEEA820046A398 /* AmbulareShowRotasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96854FBC18DEEA820046A398 /* AmbulareShowRotasViewController.m */; };
+		96854FC018DF23700046A398 /* AmbulareRotaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96854FBF18DF23700046A398 /* AmbulareRotaDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,10 @@
 		9648AC6E18D4D80700F633AC /* AmbulareGPSRecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmbulareGPSRecViewController.m; sourceTree = "<group>"; };
 		9648AC7018D5F50200F633AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9648AC7218D5F51200F633AC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		96854FBB18DEEA820046A398 /* AmbulareShowRotasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbulareShowRotasViewController.h; sourceTree = "<group>"; };
+		96854FBC18DEEA820046A398 /* AmbulareShowRotasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmbulareShowRotasViewController.m; sourceTree = "<group>"; };
+		96854FBE18DF23700046A398 /* AmbulareRotaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbulareRotaDetailViewController.h; sourceTree = "<group>"; };
+		96854FBF18DF23700046A398 /* AmbulareRotaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmbulareRotaDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,10 @@
 				2C6AC5B418D063D600F3E4F0 /* AmbulareAppDelegate.h */,
 				2C6AC5B518D063D600F3E4F0 /* AmbulareAppDelegate.m */,
 				2C6AC5B718D063D600F3E4F0 /* Main.storyboard */,
+				96854FBB18DEEA820046A398 /* AmbulareShowRotasViewController.h */,
+				96854FBC18DEEA820046A398 /* AmbulareShowRotasViewController.m */,
+				96854FBE18DF23700046A398 /* AmbulareRotaDetailViewController.h */,
+				96854FBF18DF23700046A398 /* AmbulareRotaDetailViewController.m */,
 				2C6AC5BA18D063D600F3E4F0 /* AmbulareViewController.h */,
 				2C6AC5BB18D063D600F3E4F0 /* AmbulareViewController.m */,
 				9648AC6D18D4D80700F633AC /* AmbulareGPSRecViewController.h */,
@@ -294,9 +304,11 @@
 			files = (
 				9634F0B118DDFA8800091392 /* RotaEntity.m in Sources */,
 				2C6AC5BC18D063D600F3E4F0 /* AmbulareViewController.m in Sources */,
+				96854FBD18DEEA820046A398 /* AmbulareShowRotasViewController.m in Sources */,
 				2C6AC5B218D063D600F3E4F0 /* main.m in Sources */,
 				9634F06218DDA9E700091392 /* CoordenadasEntity.m in Sources */,
 				9634F05C18DDA76C00091392 /* AmbulareModel.xcdatamodeld in Sources */,
+				96854FC018DF23700046A398 /* AmbulareRotaDetailViewController.m in Sources */,
 				9648AC6F18D4D80700F633AC /* AmbulareGPSRecViewController.m in Sources */,
 				2C6AC5B618D063D600F3E4F0 /* AmbulareAppDelegate.m in Sources */,
 			);

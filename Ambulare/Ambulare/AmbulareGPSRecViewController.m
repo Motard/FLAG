@@ -383,6 +383,16 @@
         coordenadasEntity.nomeRota = self.nomeRota;
         coordenadasEntity.latitude = [NSNumber numberWithDouble:latitude];
         coordenadasEntity.longitude = [NSNumber numberWithDouble:longitude];
+        
+        
+        NSError *error;
+        
+        //Guardar no managedObjectContext
+        if(![self.managedObjectContext save:&error])
+        {
+            NSLog(@"ERRO!! %@",[error localizedDescription]);
+        }
+
     }
     
     //Guardar o resto dos dados na outra tabela
