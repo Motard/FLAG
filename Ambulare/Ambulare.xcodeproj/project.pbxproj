@@ -23,6 +23,10 @@
 		2C6AC5D118D063D600F3E4F0 /* AmbulareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AC5D018D063D600F3E4F0 /* AmbulareTests.m */; };
 		2C6AC5DB18D0643700F3E4F0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6AC5DA18D0643700F3E4F0 /* Default@2x.png */; };
 		9608EFE718D8A2B00000DA32 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9608EFE618D8A2B00000DA32 /* background1.png */; };
+		9634F05C18DDA76C00091392 /* AmbulareModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9634F05A18DDA76C00091392 /* AmbulareModel.xcdatamodeld */; };
+		9634F06218DDA9E700091392 /* CoordenadasEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F06118DDA9E700091392 /* CoordenadasEntity.m */; };
+		9634F0AE18DDB0A900091392 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9634F0AD18DDB0A900091392 /* CoreData.framework */; };
+		9634F0B118DDFA8800091392 /* RotaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F0B018DDFA8800091392 /* RotaEntity.m */; };
 		9648AC2B18D476A600F633AC /* swipe_gesture.png in Resources */ = {isa = PBXBuildFile; fileRef = 9648AC2A18D476A600F633AC /* swipe_gesture.png */; };
 		9648AC6F18D4D80700F633AC /* AmbulareGPSRecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648AC6E18D4D80700F633AC /* AmbulareGPSRecViewController.m */; };
 		9648AC7118D5F50200F633AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9648AC7018D5F50200F633AC /* CoreLocation.framework */; };
@@ -61,6 +65,12 @@
 		2C6AC5D018D063D600F3E4F0 /* AmbulareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmbulareTests.m; sourceTree = "<group>"; };
 		2C6AC5DA18D0643700F3E4F0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9608EFE618D8A2B00000DA32 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
+		9634F05B18DDA76C00091392 /* AmbulareModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AmbulareModel.xcdatamodel; sourceTree = "<group>"; };
+		9634F06018DDA9E700091392 /* CoordenadasEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordenadasEntity.h; path = ../CoordenadasEntity.h; sourceTree = "<group>"; };
+		9634F06118DDA9E700091392 /* CoordenadasEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoordenadasEntity.m; path = ../CoordenadasEntity.m; sourceTree = "<group>"; };
+		9634F0AD18DDB0A900091392 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9634F0AF18DDFA8800091392 /* RotaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotaEntity.h; sourceTree = "<group>"; };
+		9634F0B018DDFA8800091392 /* RotaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotaEntity.m; sourceTree = "<group>"; };
 		9648AC2A18D476A600F633AC /* swipe_gesture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe_gesture.png; sourceTree = "<group>"; };
 		9648AC6D18D4D80700F633AC /* AmbulareGPSRecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbulareGPSRecViewController.h; sourceTree = "<group>"; };
 		9648AC6E18D4D80700F633AC /* AmbulareGPSRecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmbulareGPSRecViewController.m; sourceTree = "<group>"; };
@@ -73,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9634F0AE18DDB0A900091392 /* CoreData.framework in Frameworks */,
 				9648AC7318D5F51200F633AC /* MapKit.framework in Frameworks */,
 				9648AC7118D5F50200F633AC /* CoreLocation.framework in Frameworks */,
 				2C6AC5A818D063D600F3E4F0 /* CoreGraphics.framework in Frameworks */,
@@ -116,6 +127,7 @@
 		2C6AC5A418D063D600F3E4F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9634F0AD18DDB0A900091392 /* CoreData.framework */,
 				9648AC7218D5F51200F633AC /* MapKit.framework */,
 				9648AC7018D5F50200F633AC /* CoreLocation.framework */,
 				2C6AC5A518D063D600F3E4F0 /* Foundation.framework */,
@@ -129,6 +141,8 @@
 		2C6AC5AB18D063D600F3E4F0 /* Ambulare */ = {
 			isa = PBXGroup;
 			children = (
+				9634F06018DDA9E700091392 /* CoordenadasEntity.h */,
+				9634F06118DDA9E700091392 /* CoordenadasEntity.m */,
 				2C6AC5B418D063D600F3E4F0 /* AmbulareAppDelegate.h */,
 				2C6AC5B518D063D600F3E4F0 /* AmbulareAppDelegate.m */,
 				2C6AC5B718D063D600F3E4F0 /* Main.storyboard */,
@@ -136,6 +150,9 @@
 				2C6AC5BB18D063D600F3E4F0 /* AmbulareViewController.m */,
 				9648AC6D18D4D80700F633AC /* AmbulareGPSRecViewController.h */,
 				9648AC6E18D4D80700F633AC /* AmbulareGPSRecViewController.m */,
+				9634F05A18DDA76C00091392 /* AmbulareModel.xcdatamodeld */,
+				9634F0AF18DDFA8800091392 /* RotaEntity.h */,
+				9634F0B018DDFA8800091392 /* RotaEntity.m */,
 				2C6AC5BD18D063D600F3E4F0 /* Images.xcassets */,
 				2C6AC5AC18D063D600F3E4F0 /* Supporting Files */,
 			);
@@ -275,8 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9634F0B118DDFA8800091392 /* RotaEntity.m in Sources */,
 				2C6AC5BC18D063D600F3E4F0 /* AmbulareViewController.m in Sources */,
 				2C6AC5B218D063D600F3E4F0 /* main.m in Sources */,
+				9634F06218DDA9E700091392 /* CoordenadasEntity.m in Sources */,
+				9634F05C18DDA76C00091392 /* AmbulareModel.xcdatamodeld in Sources */,
 				9648AC6F18D4D80700F633AC /* AmbulareGPSRecViewController.m in Sources */,
 				2C6AC5B618D063D600F3E4F0 /* AmbulareAppDelegate.m in Sources */,
 			);
@@ -499,6 +519,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9634F05A18DDA76C00091392 /* AmbulareModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9634F05B18DDA76C00091392 /* AmbulareModel.xcdatamodel */,
+			);
+			currentVersion = 9634F05B18DDA76C00091392 /* AmbulareModel.xcdatamodel */;
+			path = AmbulareModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2C6AC59A18D063D600F3E4F0 /* Project object */;
 }

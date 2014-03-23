@@ -7,6 +7,9 @@
 //
 
 #import "AmbulareGPSRecViewController.h"
+#import "AmbulareAppDelegate.h"
+#import "CoordenadasEntity.h"
+#import "RotaEntity.h"
 
 @interface AmbulareGPSRecViewController ()
 
@@ -15,6 +18,10 @@
 @property (nonatomic) bool record;
 @property (nonatomic) int timeIntervalAbsolute;
 @property (nonatomic) NSMutableArray *avgSpeedArr;
+@property (nonatomic) double media;
+@property (nonatomic) NSString *nomeRota;
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -28,6 +35,17 @@
     }
     return _avgSpeedArr;
 }
+
+-(NSMutableArray *) locationsArr
+{
+    if(!_locationsArr)
+    {
+        _locationsArr = [[NSMutableArray alloc]init];
+    }
+    return _locationsArr;
+}
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -74,19 +92,10 @@
     
     NSLog(@"Estou a obter a localização");
     
+    //      Aceder ao AppDelegate já instanciado
+    AmbulareAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
     
-//    
-//    CLLocationCoordinate2D  newLocation, oldLocation;
-//    newLocation.latitude = 38.707508;
-//    newLocation.longitude = -9.136618;
-//    
-//    oldLocation.latitude = 38.707591;
-//    oldLocation.longitude = -9.133719;
-//    
-    //Desenhar a polyLine
-    //[self drawRouteWithNewLocation:newLocation oldLocation:oldLocation];
-    
-    //Invoca o metodo que vai criar "observers" para captar utilizações do keyboard
     [self registerForKeyboardNotifications];
 }
 
@@ -107,9 +116,11 @@
         //Mostra as coordenadas na label
         self.lcoordenadas.text = [NSString stringWithFormat:@"Lat:%lf  Long:%lf",coordenada.latitude,coordenada.longitude];
         
-        //Desenhar a polyLine
-        //[self drawRouteWithNewLocation:newLocation oldLocation:oldLocation];
-        
+        //Guarda as coordenadas num NSMutableArray
+        if(self.record)
+        {
+            [self.locationsArr addObject:newLocation];
+        }
         
         //Calcular a distancia entre os dois pontos
         //***************************************************
@@ -159,6 +170,7 @@
         
         media = media / (count-1);
         self.lAVGPace.text = [NSString stringWithFormat:@"%.2f",media];
+        self.media = media;
         NSLog(@"AVG - %f",avg);
     }
 }
@@ -326,6 +338,10 @@
         self.lAviso.text = @"Necessário introduzir nome para a rota";
     else
     {
+        self.nomeRota = self.tfNomePercurso.text;
+        
+        self.tfNomePercurso.text = @"";
+        
         self.vBottomViewGetNomePercurso.alpha = 0;
         self.vViewGPSStatus.alpha = 1;
         
@@ -336,64 +352,60 @@
     }
 }
 
--(void)drawRouteWithNewLocation:(CLLocationCoordinate2D) newLocation oldLocation: (CLLocationCoordinate2D) oldLocation
+- (IBAction)stopGravarPercurso:(id)sender
 {
-    
-        //http://www.raywenderlich.com/30001/overlay-images-and-overlay-views-with-mapkit-tutorial
-        //http://www.devfright.com/mkdirections-tutorial/
-    
-    
-        CLLocationCoordinate2D pointsToUse[2];
-        pointsToUse[0] = CLLocationCoordinate2DMake(newLocation.latitude, newLocation.longitude);
-        pointsToUse[1] = CLLocationCoordinate2DMake(oldLocation.latitude, oldLocation.longitude);
-    
-        //MKPolyline *myPolyline = [MKPolyline polylineWithCoordinates:pointsToUse count:2];
-        //[self.mvMap addOverlay:myPolyline];
+    double latitude,longitude;
+    CLLocation *coordenadas;
     
     
+    self.record = NO;
+    self.vBottomViewGetNomePercurso.alpha = 1;
+    self.vViewGPSStatus.alpha = 0;
+
+    
+    //      Criar um novo objecto do tipo CoordenadasEntity e RotaEntity
+    CoordenadasEntity *coordenadasEntity;
+    RotaEntity *rotaEntity;
+    
+    int count = [self.locationsArr count];
+    
+    for (int i = 0; i < count; i++)
+    {
+        //Instanciar o coordenadasEntity
+        coordenadasEntity = [NSEntityDescription insertNewObjectForEntityForName:@"CoordenadasEntity" inManagedObjectContext:self.managedObjectContext];
+        
+        //Conveter a location em latitude e longitude
+        coordenadas = [self.locationsArr objectAtIndex:i];
+        latitude = coordenadas.coordinate.latitude;
+        longitude = coordenadas.coordinate.longitude;
+        
+        //Passar os valores obtidos para o CoordenadasEntity
+        coordenadasEntity.nomeRota = self.nomeRota;
+        coordenadasEntity.latitude = [NSNumber numberWithDouble:latitude];
+        coordenadasEntity.longitude = [NSNumber numberWithDouble:longitude];
+    }
+    
+    //Guardar o resto dos dados na outra tabela
+    rotaEntity = [NSEntityDescription insertNewObjectForEntityForName:@"RotaEntity" inManagedObjectContext:self.managedObjectContext];
+    rotaEntity.nomeRota = self.nomeRota;
+    rotaEntity.distancia = [NSNumber numberWithDouble:self.distanciaRota];
+    rotaEntity.media = [NSNumber numberWithDouble:self.media];
+    rotaEntity.tempo = [NSNumber numberWithInt:self.timeIntervalAbsolute];
+    
+    
+    NSError *error;
+    
+    //Guardar no managedObjectContext
+    if(![self.managedObjectContext save:&error])
+    {
+        NSLog(@"ERRO!! %@",[error localizedDescription]);
+    }
+    
+    //Aceder ao AppDelegate já instanciado e gravar os dados 
+    AmbulareAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [appDelegate saveContext];
+
 }
-
-
-//- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
-//{
-//    MKOverlayView* overlayView = nil;
-//    
-//    if(overlay == self.routeLine)
-//    {
-//        //if we have not yet created an overlay view for this overlay, create it now.
-//        if(nil == self.routeLineView)
-//        {
-//            self.routeLineView = [[[MKPolylineView alloc] initWithPolyline:self.routeLine] autorelease];
-//            self.routeLineView.fillColor = [UIColor redColor];
-//            self.routeLineView.strokeColor = [UIColor redColor];
-//            self.routeLineView.lineWidth = 3;
-//        }
-//        
-//        overlayView = self.routeLineView;
-//        
-//    }
-//    
-//    return overlayView;
-//    
-//}
-
-//- (void)addRoute {
-//    NSString *thePath = [[NSBundle mainBundle] pathForResource:@"EntranceToGoliathRoute" ofType:@"plist"];
-//    NSArray *pointsArray = [NSArray arrayWithContentsOfFile:thePath];
-//    
-//    NSInteger pointsCount = pointsArray.count;
-//    
-//    CLLocationCoordinate2D pointsToUse[pointsCount];
-//    
-//    for(int i = 0; i < pointsCount; i++) {
-//        CGPoint p = CGPointFromString(pointsArray[i]);
-//        pointsToUse[i] = CLLocationCoordinate2DMake(p.x,p.y);
-//    }
-//    
-//    MKPolyline *myPolyline = [MKPolyline polylineWithCoordinates:pointsToUse count:pointsCount];
-//    
-//    [self.mapView addOverlay:myPolyline];
-//}
 
 
 @end

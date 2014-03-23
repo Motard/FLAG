@@ -25,9 +25,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lDistance;
 @property (weak, nonatomic) IBOutlet UILabel *lUnidadeDistancia;
 
-
-
-
 @property (weak, nonatomic) IBOutlet MKMapView *mvMap;
+
+@property (nonatomic) NSMutableArray *locationsArr;
 
 @end
