@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import <MapKit/MapKit.h>
 
-@interface AmbulareRotaDetailViewController : UIViewController
+@interface AmbulareRotaDetailViewController : UIViewController 
 
 @property (nonatomic) NSString *nomeRota;
 

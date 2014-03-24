@@ -23,7 +23,6 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    
     self.coordenadasArr =  [[NSMutableArray alloc]init];
     
     
@@ -73,13 +72,18 @@
         //point.title = [NSString stringWithFormat:@"%d",[coordenadaEntity.iD intValue]];
         
         if([coordenadaEntity.iD intValue] == 0)
+        {
             point.title = @"Start";
+            //MKAnnotationView *pinView = [[MKAnnotationView alloc]initWithAnnotation:point reuseIdentifier:@"MyCustomAnnotation"];
+            //pinView.image = [UIImage imageNamed:@"customPin.png"];
+            //pinView.centerOffset = CGPointMake(0,0);
+        }
         if([coordenadaEntity.iD intValue] == count-1)
             point.title = @"End";
         
         [self.MapView addAnnotation:point];
+       
     }
- 
 }
 
 
@@ -100,14 +104,36 @@
     NSError *error;
     
     self.rotasArr = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    
 }
 
-- (void)didReceiveMemoryWarning
+
+
+//Customizar o MKPointAnnotation
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // If it's the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // Handle any custom annotations.
+    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    {
+        // Try to dequeue an existing pin view first.
+        MKAnnotationView *pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        if (!pinView)
+        {
+            // If an existing pin view was not available, create one.
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+            //pinView.animatesDrop = YES;
+            pinView.canShowCallout = YES;
+            pinView.image = [UIImage imageNamed:@"customPin.png"];
+            pinView.calloutOffset = CGPointMake(0, 32);
+        } else {
+            pinView.annotation = annotation;
+        }
+        return pinView;
+    }
+    return nil;
 }
 
 @end
