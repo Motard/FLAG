@@ -230,7 +230,7 @@
                     NSDate *actualTime;
                        
                     // Alterar para uma condição contar enquanto estiver a gravar
-                    while (1)
+                    while (self.record)
                     {
                        //       Contar o tempo em cada iteração do ciclo
                        actualTime = [[NSDate alloc]init];
@@ -358,6 +358,10 @@
     CLLocation *coordenadas;
     
     
+    
+    //Parar o GPS
+    [self.locationManager stopUpdatingLocation];
+    
     self.record = NO;
     self.vBottomViewGetNomePercurso.alpha = 1;
     self.vViewGPSStatus.alpha = 0;
@@ -383,15 +387,16 @@
         coordenadasEntity.nomeRota = self.nomeRota;
         coordenadasEntity.latitude = [NSNumber numberWithDouble:latitude];
         coordenadasEntity.longitude = [NSNumber numberWithDouble:longitude];
+        coordenadasEntity.iD = [NSNumber numberWithInt:i];
         
-        
-        NSError *error;
-        
-        //Guardar no managedObjectContext
-        if(![self.managedObjectContext save:&error])
-        {
-            NSLog(@"ERRO!! %@",[error localizedDescription]);
-        }
+//        
+//        NSError *error;
+//        
+//        //Guardar no managedObjectContext
+//        if(![self.managedObjectContext save:&error])
+//        {
+//            NSLog(@"ERRO!! %@",[error localizedDescription]);
+//        }
 
     }
     

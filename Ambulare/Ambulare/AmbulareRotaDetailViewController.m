@@ -10,11 +10,12 @@
 #import "AmbulareAppDelegate.h"
 #import "CoordenadasEntity.h"
 
+
 @interface AmbulareRotaDetailViewController ()
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) NSArray *rotasArr;
-@property (nonatomic) NSArray *coordenadasArr;
+@property (nonatomic) NSMutableArray *coordenadasArr;
 
 @end
 
@@ -22,14 +23,63 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CoordenadasEntity" inManagedObjectContext:self.managedObjectContext];
     
-    [fetchRequest setEntity:entity];
+    self.coordenadasArr =  [[NSMutableArray alloc]init];
     
-    NSError *error;
     
-    self.rotasArr = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    int count = [self.rotasArr count];
+    
+    
+    //Passar as coordenadas para o NSMutableArray coordenadasArr cujo nome seja igual á rota escolhida
+    for (int i = 0; i < count; i++)
+    {
+        CoordenadasEntity *coordenadaEntity = [self.rotasArr objectAtIndex:i];
+        
+        if ([coordenadaEntity.nomeRota isEqualToString:self.nomeRota])
+        {
+            [self.coordenadasArr addObject:[self.rotasArr objectAtIndex:i]];
+        }
+    }
+    
+    count = [self.coordenadasArr count];
+    
+    NSLog(@"%d",count);
+    
+    
+    //Centrar o mapa no primeiro ponto da Rota
+    CoordenadasEntity *coordenadaEntity = [self.coordenadasArr objectAtIndex:0];
+    
+    
+    MKCoordinateRegion mapRegion;
+    mapRegion.center.latitude = [coordenadaEntity.latitude doubleValue];
+    mapRegion.center.longitude = [coordenadaEntity.longitude doubleValue];
+    mapRegion.span.latitudeDelta = 0.010;
+    mapRegion.span.longitudeDelta = 0.010;
+    self.MapView.region = mapRegion;
+    
+    
+    //Colocar um marker nos pontos da rota
+  
+    for (int i=0 ; i<count ; i++)
+    {
+        CoordenadasEntity *coordenadaEntity = [self.coordenadasArr objectAtIndex:i];
+        
+        CLLocationCoordinate2D coordenada;
+        coordenada.longitude = [coordenadaEntity.longitude doubleValue];
+        coordenada.latitude = [coordenadaEntity.latitude doubleValue];
+    
+        MKPointAnnotation * point = [[MKPointAnnotation alloc]init];
+        point.coordinate = coordenada;
+        //point.title = [NSString stringWithFormat:@"%d",[coordenadaEntity.iD intValue]];
+        
+        if([coordenadaEntity.iD intValue] == 0)
+            point.title = @"Start";
+        if([coordenadaEntity.iD intValue] == count-1)
+            point.title = @"End";
+        
+        [self.MapView addAnnotation:point];
+    }
+ 
 }
 
 
@@ -41,21 +91,16 @@
     AmbulareAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
     
-    int count = [self.rotasArr count];
     
-    for (int i = 0; i < count; i++)
-    {
-        CoordenadasEntity *coordenadaEntity = [self.rotasArr objectAtIndex:i];
-        
-        if ([coordenadaEntity.nomeRota isEqualToString:self.nomeRota])
-        {
-            [self.coordenadasArr arrayByAddingObjectsFromArray:[self.rotasArr objectAtIndex:i]];
-        }
-    }
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CoordenadasEntity" inManagedObjectContext:self.managedObjectContext];
     
-    count = [self.coordenadasArr count];
+    [fetchRequest setEntity:entity];
     
-    NSLog(@"%d",count);
+    NSError *error;
+    
+    self.rotasArr = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
     
 }
 

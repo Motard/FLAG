@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <MapKit/MapKit.h>
 
 @interface AmbulareRotaDetailViewController : UIViewController
 
 @property (nonatomic) NSString *nomeRota;
 
+@property (weak, nonatomic) IBOutlet MKMapView *MapView;
 
 @end

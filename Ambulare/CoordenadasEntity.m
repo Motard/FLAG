@@ -2,7 +2,7 @@
 //  CoordenadasEntity.m
 //  Ambulare
 //
-//  Created by Paulo Martins on 22/03/14.
+//  Created by Formando FLAG on 24/03/14.
 //  Copyright (c) 2014 Paulo Martins. All rights reserved.
 //
 
@@ -11,8 +11,9 @@
 
 @implementation CoordenadasEntity
 
-@dynamic nomeRota;
 @dynamic latitude;
 @dynamic longitude;
+@dynamic nomeRota;
+@dynamic iD;
 
 @end

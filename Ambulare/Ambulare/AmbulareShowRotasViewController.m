@@ -10,6 +10,7 @@
 #import "AmbulareAppDelegate.h"
 #import "RotaEntity.h"
 #import "AmbulareRotaDetailViewController.h"
+#import "AmbulareRotaCell.h"
 
 @interface AmbulareShowRotasViewController ()
 
@@ -48,7 +49,7 @@
     
     
     //tive de colocar esta linha de código mas não percebo porquê
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
 
 #pragma mark - Table View
@@ -61,16 +62,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"CellRotas";
+    AmbulareRotaCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     RotaEntity * rota = [self.rotasArr objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = rota.nomeRota;
+    if(cell == nil)
+    {
+        // Relacionar o meu .xib com uma celula
+        NSArray* aux = [[NSBundle mainBundle] loadNibNamed:@"AmbulareRotaCell" owner:nil options:nil];
+        
+        cell = [aux objectAtIndex:0];
+    }
+    
+    
+    cell.lNomeRota.text = rota.nomeRota;
+    
+    
+    
+    cell.lDistanciaRota.text = [NSString stringWithFormat:@"%d",[rota.distancia integerValue]];
     
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"didSelectRowAtIndexPath");
     
