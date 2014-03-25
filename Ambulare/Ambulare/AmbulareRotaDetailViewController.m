@@ -148,12 +148,29 @@
     if ([overlay isKindOfClass:MKPolyline.class])
     {
         MKPolylineView *lineView = [[MKPolylineView alloc] initWithOverlay:overlay];
-        lineView.strokeColor = [UIColor blackColor];
+        lineView.strokeColor = [UIColor blueColor];
         return lineView;
     }
     return nil;
 }
 
+- (IBAction)mapTypeChanged:(id)sender
+{
+    switch (self.mapTypeSegmentedControl.selectedSegmentIndex)
+    {
+        case 0:
+            self.MapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            self.MapView.mapType = MKMapTypeHybrid;
+            break;
+        case 2:
+            self.MapView.mapType = MKMapTypeSatellite;
+            break;
+        default:
+            break;
+    }
+}
 
 //Customizar o MKPointAnnotation
 //- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation

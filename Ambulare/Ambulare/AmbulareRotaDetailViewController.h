@@ -15,5 +15,6 @@
 @property (nonatomic) NSString *nomeRota;
 
 @property (weak, nonatomic) IBOutlet MKMapView *MapView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeSegmentedControl;
 
 @end
