@@ -26,6 +26,9 @@
 		2CBC46D418E03CA600020DB7 /* AmbulareRotaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC46D318E03CA600020DB7 /* AmbulareRotaCell.xib */; };
 		2CBC46D718E0552600020DB7 /* CoordenadasEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC46D618E0552600020DB7 /* CoordenadasEntity.m */; };
 		9607D18618E0A7C600C1ED7C /* customPin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9607D18518E0A7C600C1ED7C /* customPin.png */; };
+		9607D19118E1F66C00C1ED7C /* bt_gravarPercurso.png in Resources */ = {isa = PBXBuildFile; fileRef = 9607D19018E1F66C00C1ED7C /* bt_gravarPercurso.png */; };
+		9607D19318E1F78900C1ED7C /* bt_stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 9607D19218E1F78900C1ED7C /* bt_stop.png */; };
+		9607D19518E1F89100C1ED7C /* bt_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9607D19418E1F89100C1ED7C /* bt_back.png */; };
 		9608EFE718D8A2B00000DA32 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9608EFE618D8A2B00000DA32 /* background1.png */; };
 		9634F05C18DDA76C00091392 /* AmbulareModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9634F05A18DDA76C00091392 /* AmbulareModel.xcdatamodeld */; };
 		9634F0AE18DDB0A900091392 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9634F0AD18DDB0A900091392 /* CoreData.framework */; };
@@ -75,6 +78,9 @@
 		2CBC46D518E0552600020DB7 /* CoordenadasEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordenadasEntity.h; path = ../CoordenadasEntity.h; sourceTree = "<group>"; };
 		2CBC46D618E0552600020DB7 /* CoordenadasEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoordenadasEntity.m; path = ../CoordenadasEntity.m; sourceTree = "<group>"; };
 		9607D18518E0A7C600C1ED7C /* customPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = customPin.png; sourceTree = "<group>"; };
+		9607D19018E1F66C00C1ED7C /* bt_gravarPercurso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_gravarPercurso.png; sourceTree = "<group>"; };
+		9607D19218E1F78900C1ED7C /* bt_stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_stop.png; sourceTree = "<group>"; };
+		9607D19418E1F89100C1ED7C /* bt_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_back.png; sourceTree = "<group>"; };
 		9608EFE618D8A2B00000DA32 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
 		9634F05B18DDA76C00091392 /* AmbulareModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AmbulareModel.xcdatamodel; sourceTree = "<group>"; };
 		9634F0AD18DDB0A900091392 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -182,6 +188,9 @@
 		2C6AC5AC18D063D600F3E4F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9607D19018E1F66C00C1ED7C /* bt_gravarPercurso.png */,
+				9607D19218E1F78900C1ED7C /* bt_stop.png */,
+				9607D19418E1F89100C1ED7C /* bt_back.png */,
 				9607D18518E0A7C600C1ED7C /* customPin.png */,
 				9608EFE618D8A2B00000DA32 /* background1.png */,
 				2C6AC5DA18D0643700F3E4F0 /* Default@2x.png */,
@@ -290,9 +299,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6AC5DB18D0643700F3E4F0 /* Default@2x.png in Resources */,
+				9607D19318E1F78900C1ED7C /* bt_stop.png in Resources */,
 				9608EFE718D8A2B00000DA32 /* background1.png in Resources */,
 				9607D18618E0A7C600C1ED7C /* customPin.png in Resources */,
+				9607D19118E1F66C00C1ED7C /* bt_gravarPercurso.png in Resources */,
 				2CBC46D418E03CA600020DB7 /* AmbulareRotaCell.xib in Resources */,
+				9607D19518E1F89100C1ED7C /* bt_back.png in Resources */,
 				9648AC2B18D476A600F633AC /* swipe_gesture.png in Resources */,
 				2C6AC5BE18D063D600F3E4F0 /* Images.xcassets in Resources */,
 				2C6AC5B018D063D600F3E4F0 /* InfoPlist.strings in Resources */,

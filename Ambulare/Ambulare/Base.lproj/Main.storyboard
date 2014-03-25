@@ -8,16 +8,18 @@
         <scene sceneID="tXY-pB-FjZ">
             <objects>
                 <navigationController definesPresentationContext="YES" id="n7G-Cf-TVx" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sTO-Ui-ahE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fhM-nq-cCy">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="onV-CW-ISd" kind="relationship" relationship="rootViewController" id="FsL-se-VB1"/>
+                        <segue destination="rry-pc-tyG" kind="push" id="hj8-OT-8VY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRj-lG-xJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="179" y="230"/>
+            <point key="canvasLocation" x="143" y="206"/>
         </scene>
         <!--Ambulare Show Rotas View Controller-->
         <scene sceneID="JXf-7e-0TX">
@@ -32,11 +34,17 @@
                             <outlet property="delegate" destination="rry-pc-tyG" id="ecW-6q-g8S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cEx-BC-EZ7"/>
+                    <navigationItem key="navigationItem" id="cEx-BC-EZ7">
+                        <barButtonItem key="rightBarButtonItem" title="Home" id="lTe-mz-ahT">
+                            <connections>
+                                <segue destination="onV-CW-ISd" kind="push" id="bMU-84-niT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOr-58-Qg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-555" y="1160"/>
+            <point key="canvasLocation" x="-540" y="513"/>
         </scene>
         <!--Ambulare Rota Detail View Controller-->
         <scene sceneID="rLU-lQ-ZmO">
@@ -51,11 +59,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="V4r-Ba-q6m">
-                                <rect key="frame" x="-20" y="-20" width="340" height="588"/>
+                                <rect key="frame" x="0.0" y="-2" width="320" height="512"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IRI-Nm-7Nv">
-                                <rect key="frame" x="55" y="520" width="191" height="29"/>
+                                <rect key="frame" x="65" y="476" width="191" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.17999999999999999" colorSpace="calibratedWhite"/>
                                 <segments>
@@ -68,6 +76,16 @@
                                     <action selector="mapTypeChanged:" destination="WP7-bH-j5z" eventType="valueChanged" id="vyD-Or-JIg"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPV-DF-JHu">
+                                <rect key="frame" x="20" y="518" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back" image="bt_back.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rry-pc-tyG" kind="push" id="502-K4-tro"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -78,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7q5-IU-ISb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-363" y="2069"/>
+            <point key="canvasLocation" x="-946" y="513"/>
         </scene>
         <!--Ambulare View Controller-->
         <scene sceneID="Wt5-iP-lxj">
@@ -175,11 +193,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6E-QO-eFG">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6E-QO-eFG">
                                         <rect key="frame" x="88" y="87" width="144" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.81714365433673475" green="0.70228559985490868" blue="0.72915519347089652" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Gravar Percurso">
+                                        <state key="normal" title="Gravar Percurso" image="bt_gravarPercurso.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -267,12 +284,11 @@
                                         <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vb-aa-FCn">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vb-aa-FCn">
                                         <rect key="frame" x="125" y="124" width="70" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.1102748293" green="0.1241008836" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <state key="normal" title="STOP">
+                                        <state key="normal" title="STOP" image="bt_stop.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -317,6 +333,9 @@
     </scenes>
     <resources>
         <image name="Default.png" width="320" height="480"/>
+        <image name="bt_back.png" width="35" height="30"/>
+        <image name="bt_gravarPercurso.png" width="144" height="30"/>
+        <image name="bt_stop.png" width="70" height="30"/>
         <image name="swipe_gesture.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -325,6 +344,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="502-K4-tro"/>
         <segue reference="Kyw-En-ASm"/>
     </inferredMetricsTieBreakers>
 </document>
