@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C366BB818E2DA1B008CE48D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C366BB718E2DA1B008CE48D /* FacebookSDK.framework */; };
 		2C366BBB18E2DA90008CE48D /* AmbulareFacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C366BBA18E2DA90008CE48D /* AmbulareFacebookViewController.m */; };
 		2C6AC5A618D063D600F3E4F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6AC5A518D063D600F3E4F0 /* Foundation.framework */; };
 		2C6AC5A818D063D600F3E4F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6AC5A718D063D600F3E4F0 /* CoreGraphics.framework */; };
@@ -31,6 +30,7 @@
 		9607D19118E1F66C00C1ED7C /* bt_gravarPercurso.png in Resources */ = {isa = PBXBuildFile; fileRef = 9607D19018E1F66C00C1ED7C /* bt_gravarPercurso.png */; };
 		9607D19318E1F78900C1ED7C /* bt_stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 9607D19218E1F78900C1ED7C /* bt_stop.png */; };
 		9607D19518E1F89100C1ED7C /* bt_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9607D19418E1F89100C1ED7C /* bt_back.png */; };
+		9607D19618E334D700C1ED7C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C366BB718E2DA1B008CE48D /* FacebookSDK.framework */; };
 		9608EFE718D8A2B00000DA32 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9608EFE618D8A2B00000DA32 /* background1.png */; };
 		9634F05C18DDA76C00091392 /* AmbulareModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9634F05A18DDA76C00091392 /* AmbulareModel.xcdatamodeld */; };
 		9634F0AE18DDB0A900091392 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9634F0AD18DDB0A900091392 /* CoreData.framework */; };
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C366BB818E2DA1B008CE48D /* FacebookSDK.framework in Frameworks */,
+				9607D19618E334D700C1ED7C /* FacebookSDK.framework in Frameworks */,
 				9634F0AE18DDB0A900091392 /* CoreData.framework in Frameworks */,
 				9648AC7318D5F51200F633AC /* MapKit.framework in Frameworks */,
 				9648AC7118D5F50200F633AC /* CoreLocation.framework in Frameworks */,
@@ -476,6 +476,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/formando/Documents/FacebookSDK,
+					/Users/Motard/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ambulare/Ambulare-Prefix.pch";
@@ -493,6 +494,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/formando/Documents/FacebookSDK,
+					/Users/Motard/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ambulare/Ambulare-Prefix.pch";

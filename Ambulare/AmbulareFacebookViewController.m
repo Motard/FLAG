@@ -75,12 +75,39 @@
             
             // Further code to post the OG story goes here
             
+            // create an Open Graph action
+            id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
+            [action setObject:objectId forKey:@"rota"];
+            
+            // create action referencing user owned object
+            [FBRequestConnection startForPostWithGraphPath:@"me/ambulare:criar"
+                                               graphObject:action
+                                         completionHandler:^(FBRequestConnection *connection,
+                                                             id result,
+                                                             NSError *error) {
+                if(!error) {
+                    NSLog([NSString stringWithFormat:@"OG story posted, story id: %@", [result objectForKey:@"id"]]);
+                    [[[UIAlertView alloc] initWithTitle:@"OG story posted"
+                                                message:@"Check your Facebook profile or activity log to see the story."
+                                               delegate:self
+                                      cancelButtonTitle:@"OK!"
+                                      otherButtonTitles:nil] show];
+                } else {
+                    // An error occurred
+                    NSLog(@"Encountered a error posting to Open Graph: %@", error);
+                }
+            }];
+
+            
+            
+            
         } else {
             // An error occurred
             NSLog(@"Error posting the Open Graph object to the Object API: %@", error);
         }
     }];
-
+    
+    
 }
 
 
