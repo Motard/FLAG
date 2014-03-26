@@ -43,6 +43,9 @@
 {
     [super viewDidLoad];
     
+    //esconder a Navigation Controller
+    [self.navigationController setNavigationBarHidden:NO];
+    
     AmbulareAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     
     self.managedObjectContext = appDelegate.managedObjectContext;

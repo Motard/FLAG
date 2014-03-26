@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n7G-Cf-TVx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n7G-Cf-TVx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -46,6 +46,42 @@
             </objects>
             <point key="canvasLocation" x="-540" y="513"/>
         </scene>
+        <!--Ambulare Facebook View Controller-->
+        <scene sceneID="OLF-QB-97Q">
+            <objects>
+                <viewController id="Tfs-c4-716" customClass="AmbulareFacebookViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YaA-e6-dys"/>
+                        <viewControllerLayoutGuide type="bottom" id="npA-dB-ix4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M2j-PX-FBa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UQ-n6-XAO">
+                                <rect key="frame" x="20" y="457" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="POST">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postFB:" destination="Tfs-c4-716" eventType="touchUpInside" id="C28-H4-7V0"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aod-Dn-s6c" customClass="FBLoginView">
+                                <rect key="frame" x="20" y="77" width="280" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uG9-TX-07q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M3y-qX-y3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1399" y="513"/>
+        </scene>
         <!--Ambulare Rota Detail View Controller-->
         <scene sceneID="rLU-lQ-ZmO">
             <objects>
@@ -86,9 +122,21 @@
                                     <segue destination="rry-pc-tyG" kind="push" id="502-K4-tro"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wg8-Hd-BVZ">
+                                <rect key="frame" x="254" y="519" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="FB">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Tfs-c4-716" kind="push" id="f5r-Of-jdY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="MapView" destination="V4r-Ba-q6m" id="AXx-Td-87w"/>
                         <outlet property="mapTypeSegmentedControl" destination="IRI-Nm-7Nv" id="9pK-ab-6sK"/>
@@ -344,7 +392,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="502-K4-tro"/>
-        <segue reference="Kyw-En-ASm"/>
+        <segue reference="bMU-84-niT"/>
+        <segue reference="j37-V5-phX"/>
     </inferredMetricsTieBreakers>
 </document>

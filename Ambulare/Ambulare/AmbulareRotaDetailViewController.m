@@ -140,8 +140,8 @@
     MKPolyline *myPolyline = [MKPolyline polylineWithCoordinates:pointsToUse count:pointsCount];
     
     [self.MapView addOverlay:myPolyline];
-    
 }
+
 
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
@@ -153,6 +153,7 @@
     }
     return nil;
 }
+
 
 - (IBAction)mapTypeChanged:(id)sender
 {
