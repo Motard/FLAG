@@ -269,9 +269,9 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6E-QO-eFG">
-                                        <rect key="frame" x="88" y="87" width="144" height="30"/>
+                                        <rect key="frame" x="88" y="87" width="140" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Gravar Percurso" image="bt_gravarPercurso.png">
+                                        <state key="normal" title="Gravar Percurso" backgroundImage="bt_gravarPercurso.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -360,10 +360,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vb-aa-FCn">
-                                        <rect key="frame" x="125" y="124" width="70" height="30"/>
+                                        <rect key="frame" x="100" y="124" width="120" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <state key="normal" title="STOP" image="bt_stop.png">
+                                        <state key="normal" title="STOP" backgroundImage="bt_stop.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -408,8 +408,8 @@
     </scenes>
     <resources>
         <image name="Default.png" width="320" height="480"/>
-        <image name="bt_gravarPercurso.png" width="144" height="30"/>
-        <image name="bt_stop.png" width="70" height="30"/>
+        <image name="bt_gravarPercurso.png" width="140" height="50"/>
+        <image name="bt_stop.png" width="120" height="40"/>
         <image name="swipe_gesture.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
