@@ -13,6 +13,7 @@
 @interface AmbulareRotaDetailViewController : UIViewController 
 
 @property (nonatomic) NSString *nomeRota;
+@property (nonatomic) double distanciaRota;
 
 @property (weak, nonatomic) IBOutlet MKMapView *MapView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeSegmentedControl;

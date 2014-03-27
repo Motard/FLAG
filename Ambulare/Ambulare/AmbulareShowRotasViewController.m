@@ -80,9 +80,6 @@
     
     
     cell.lNomeRota.text = rota.nomeRota;
-    
-    
-    
     cell.lDistanciaRota.text = [NSString stringWithFormat:@"%d",[rota.distancia integerValue]];
     
     return cell;
@@ -101,6 +98,7 @@
     
     //Passar o nome da rota para a NString da DetailView
     view.nomeRota = rota.nomeRota;
+    view.distanciaRota = [rota.distancia doubleValue];
     
 }
 

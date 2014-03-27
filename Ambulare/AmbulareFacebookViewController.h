@@ -11,4 +11,11 @@
 
 @interface AmbulareFacebookViewController : UIViewController <FBLoginViewDelegate>
 
+@property (nonatomic) NSString * nomeRota;
+@property (nonatomic) double distanciaRota;
+
+@property (weak, nonatomic) IBOutlet UILabel *lNomeRota;
+@property (weak, nonatomic) IBOutlet UITextField *tvComentarioRota;
+@property (weak, nonatomic) IBOutlet UILabel *lDistanciaRota;
+
 @end

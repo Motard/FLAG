@@ -9,6 +9,7 @@
 #import "AmbulareRotaDetailViewController.h"
 #import "AmbulareAppDelegate.h"
 #import "CoordenadasEntity.h"
+#import "AmbulareFacebookViewController.h"
 
 
 @interface AmbulareRotaDetailViewController ()
@@ -172,6 +173,20 @@
             break;
     }
 }
+
+- (IBAction)goFacebookView:(id)sender
+{
+    //Instanciar a view
+    AmbulareFacebookViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"FacebookView"];
+    [self.navigationController pushViewController:view animated:YES];
+    
+    //Passar o nome da rota para a NString da DetailView
+    view.nomeRota = self.nomeRota;
+    view.distanciaRota = self.distanciaRota;
+}
+
+
+
 
 //Customizar o MKPointAnnotation
 //- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation

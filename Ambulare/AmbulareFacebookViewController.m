@@ -19,15 +19,15 @@
 {
     [super viewDidLoad];
     
+    //Login Facebook
     FBLoginView *loginView = [[FBLoginView alloc]initWithReadPermissions:@[@"basic_info",@"email",@"user_likes"]];
     loginView.defaultAudience=FBSessionDefaultAudienceFriends;
     loginView.publishPermissions=@[@"publish_actions"];
- //   [FBLoginView class];
-   
-  //  loginView.frame= self.view.frame;
     loginView.delegate=self;
-  //  [self.view addSubview:loginView];
-    
+ 
+    //Preencher as labels
+    self.lNomeRota.text = self.nomeRota;
+    self.lDistanciaRota.text = [NSString stringWithFormat:@"%.0f",self.distanciaRota];
     
 }
 
@@ -43,6 +43,15 @@
 
 - (IBAction)postFB:(id)sender
 {
+    NSString *comentario;
+    
+    
+    //Obter o comentário da rota
+    if ([self.tvComentarioRota.text length] > 0)
+    {
+        comentario = self.tvComentarioRota.text;
+    }
+    
     // instantiate a Facebook Open Graph object
     NSMutableDictionary<FBOpenGraphObject> *object = [FBGraphObject openGraphObjectForPost];
     
@@ -50,16 +59,19 @@
     object.provisionedForPost = YES;
     
     // for og:title
-    object[@"title"] = @"Rota 1";
+    object[@"title"] = [NSString stringWithFormat:@"%@",self.nomeRota];
     
     // for og:type, this corresponds to the Namespace you've set for your app and the object type name
     object[@"type"] = @"ambulare:rota";
     
     // for og:description
-    object[@"description"] = @"bla bla bla.";
+    object[@"description"] = [NSString stringWithFormat:@"%@",comentario];
+    
+    //for ambulare:route
+    //object[@"route"] =
     
     // for og:url, we cover how this is used in the "Deep Linking" section below
-    object[@"url"] = @"http://example.com/roasted_pumpkin_seeds";
+    //object[@"url"] = @"http://example.com/roasted_pumpkin_seeds";
     
     // for og:image we assign the image that we just staged, using the uri we got as a response
     // the image has to be packed in a dictionary like this:
