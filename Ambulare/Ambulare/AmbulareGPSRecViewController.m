@@ -85,7 +85,7 @@
     self.locationManager.delegate = self;
     
     //Defenir a accuracy
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     
     //liga o gps e pede actualização
     [self.locationManager startUpdatingLocation];

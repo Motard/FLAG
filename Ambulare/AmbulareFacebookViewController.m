@@ -104,6 +104,8 @@
                                                delegate:self
                                       cancelButtonTitle:@"OK!"
                                       otherButtonTitles:nil] show];
+                    
+                   
                 } else {
                     // An error occurred
                     NSLog(@"Encountered a error posting to Open Graph: %@", error);
@@ -119,9 +121,13 @@
         }
     }];
     
-    
+     //[self goBack];
 }
 
+-(void)goBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 //https://developers.facebook.com/docs/android/scrumptious/publish-open-graph-story/
 

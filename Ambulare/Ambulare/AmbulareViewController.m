@@ -46,9 +46,12 @@
     {
         NSLog(@"FALSE");
     }
-    
-    
+}
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    //esconder a Navigation Controller
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
