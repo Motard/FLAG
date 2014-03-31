@@ -60,6 +60,12 @@
 {
     //Mostrar a Navigation Controller
     [self.navigationController setNavigationBarHidden:NO];
+    
+    if (self.record)
+    {
+        self.vBottomViewGetNomePercurso.alpha = 0;
+        self.vViewGPSStatus.alpha = 1;
+    }
 }
 
 - (void)viewDidLoad
@@ -88,13 +94,15 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     
     //liga o gps e pede actualização
-    [self.locationManager startUpdatingLocation];
+    //[self.locationManager startUpdatingLocation];
     
     NSLog(@"Estou a obter a localização");
     
     //      Aceder ao AppDelegate já instanciado
     AmbulareAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
+    self.record = appDelegate.record;
+    self.nomeRota = appDelegate.nomeRota;
     
     [self registerForKeyboardNotifications];
 }
@@ -345,10 +353,16 @@
         self.vBottomViewGetNomePercurso.alpha = 0;
         self.vViewGPSStatus.alpha = 1;
         
-        //Passar a variavél record a true
+        //Passar a variavél record a true (a local e a do AppDelegate)
+        AmbulareAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        appDelegate.record = YES;
         self.record = YES;
+        appDelegate.nomeRota = self.nomeRota;
         
+        //Dar inincio á contagem do tempo
         [self timePassed];
+        
+        [self.locationManager startUpdatingLocation];
     }
 }
 
@@ -362,7 +376,13 @@
     //Parar o GPS
     [self.locationManager stopUpdatingLocation];
     
+    
+    //Passar a variável record a false(a local e a do AppDelegate)
+    AmbulareAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate.record = NO;
     self.record = NO;
+    self.nomeRota = appDelegate.nomeRota;
+    
     self.vBottomViewGetNomePercurso.alpha = 1;
     self.vViewGPSStatus.alpha = 0;
 
@@ -416,8 +436,8 @@
         NSLog(@"ERRO!! %@",[error localizedDescription]);
     }
     
-    //Aceder ao AppDelegate já instanciado e gravar os dados 
-    AmbulareAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    //Aceder ao appDelegate já instanciado e gravar os dados 
+    //AmbulareAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     [appDelegate saveContext];
 
 }

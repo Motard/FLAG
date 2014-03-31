@@ -15,6 +15,8 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic) bool showSwipeImage;
+@property (nonatomic) bool record;
+@property (nonatomic) NSString *nomeRota;
 
 //propriedades do CoreData
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

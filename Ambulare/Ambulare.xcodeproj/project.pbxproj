@@ -27,9 +27,9 @@
 		2CBC46D418E03CA600020DB7 /* AmbulareRotaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC46D318E03CA600020DB7 /* AmbulareRotaCell.xib */; };
 		2CBC46D718E0552600020DB7 /* CoordenadasEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC46D618E0552600020DB7 /* CoordenadasEntity.m */; };
 		9607D18618E0A7C600C1ED7C /* customPin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9607D18518E0A7C600C1ED7C /* customPin.png */; };
-		9607D19618E334D700C1ED7C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C366BB718E2DA1B008CE48D /* FacebookSDK.framework */; };
 		9607D19818E4A78D00C1ED7C /* bt_gravarPercurso.png in Resources */ = {isa = PBXBuildFile; fileRef = 9607D19718E4A78D00C1ED7C /* bt_gravarPercurso.png */; };
 		9607D19C18E4AA6700C1ED7C /* bt_stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 9607D19B18E4AA6700C1ED7C /* bt_stop.png */; };
+		9607D1A018E9B6E900C1ED7C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9607D19F18E9B6E900C1ED7C /* FacebookSDK.framework */; };
 		9634F05C18DDA76C00091392 /* AmbulareModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9634F05A18DDA76C00091392 /* AmbulareModel.xcdatamodeld */; };
 		9634F0AE18DDB0A900091392 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9634F0AD18DDB0A900091392 /* CoreData.framework */; };
 		9634F0B118DDFA8800091392 /* RotaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634F0B018DDFA8800091392 /* RotaEntity.m */; };
@@ -83,6 +83,7 @@
 		9607D18518E0A7C600C1ED7C /* customPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = customPin.png; sourceTree = "<group>"; };
 		9607D19718E4A78D00C1ED7C /* bt_gravarPercurso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_gravarPercurso.png; sourceTree = "<group>"; };
 		9607D19B18E4AA6700C1ED7C /* bt_stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_stop.png; sourceTree = "<group>"; };
+		9607D19F18E9B6E900C1ED7C /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		9634F05B18DDA76C00091392 /* AmbulareModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AmbulareModel.xcdatamodel; sourceTree = "<group>"; };
 		9634F0AD18DDB0A900091392 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9634F0AF18DDFA8800091392 /* RotaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotaEntity.h; sourceTree = "<group>"; };
@@ -103,13 +104,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9607D19618E334D700C1ED7C /* FacebookSDK.framework in Frameworks */,
 				9634F0AE18DDB0A900091392 /* CoreData.framework in Frameworks */,
 				9648AC7318D5F51200F633AC /* MapKit.framework in Frameworks */,
 				9648AC7118D5F50200F633AC /* CoreLocation.framework in Frameworks */,
 				2C6AC5A818D063D600F3E4F0 /* CoreGraphics.framework in Frameworks */,
 				2C6AC5AA18D063D600F3E4F0 /* UIKit.framework in Frameworks */,
 				2C6AC5A618D063D600F3E4F0 /* Foundation.framework in Frameworks */,
+				9607D1A018E9B6E900C1ED7C /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +149,7 @@
 		2C6AC5A418D063D600F3E4F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9607D19F18E9B6E900C1ED7C /* FacebookSDK.framework */,
 				2C366BB718E2DA1B008CE48D /* FacebookSDK.framework */,
 				9634F0AD18DDB0A900091392 /* CoreData.framework */,
 				9648AC7218D5F51200F633AC /* MapKit.framework */,
@@ -163,16 +165,13 @@
 		2C6AC5AB18D063D600F3E4F0 /* Ambulare */ = {
 			isa = PBXGroup;
 			children = (
+				9607D19E18E978ED00C1ED7C /* Custom Cell */,
+				9607D19D18E9782800C1ED7C /* Core Data */,
 				2C366BB918E2DA90008CE48D /* AmbulareFacebookViewController.h */,
 				2C366BBA18E2DA90008CE48D /* AmbulareFacebookViewController.m */,
-				2CBC46D518E0552600020DB7 /* CoordenadasEntity.h */,
-				2CBC46D618E0552600020DB7 /* CoordenadasEntity.m */,
 				2C6AC5B418D063D600F3E4F0 /* AmbulareAppDelegate.h */,
 				2C6AC5B518D063D600F3E4F0 /* AmbulareAppDelegate.m */,
 				2C6AC5B718D063D600F3E4F0 /* Main.storyboard */,
-				2CBC46D318E03CA600020DB7 /* AmbulareRotaCell.xib */,
-				2CBC46CE18E03AEA00020DB7 /* AmbulareRotaCell.h */,
-				2CBC46CF18E03AEA00020DB7 /* AmbulareRotaCell.m */,
 				96854FBB18DEEA820046A398 /* AmbulareShowRotasViewController.h */,
 				96854FBC18DEEA820046A398 /* AmbulareShowRotasViewController.m */,
 				96854FBE18DF23700046A398 /* AmbulareRotaDetailViewController.h */,
@@ -181,9 +180,6 @@
 				2C6AC5BB18D063D600F3E4F0 /* AmbulareViewController.m */,
 				9648AC6D18D4D80700F633AC /* AmbulareGPSRecViewController.h */,
 				9648AC6E18D4D80700F633AC /* AmbulareGPSRecViewController.m */,
-				9634F05A18DDA76C00091392 /* AmbulareModel.xcdatamodeld */,
-				9634F0AF18DDFA8800091392 /* RotaEntity.h */,
-				9634F0B018DDFA8800091392 /* RotaEntity.m */,
 				2C6AC5BD18D063D600F3E4F0 /* Images.xcassets */,
 				2C6AC5AC18D063D600F3E4F0 /* Supporting Files */,
 			);
@@ -222,6 +218,28 @@
 				2C6AC5CD18D063D600F3E4F0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9607D19D18E9782800C1ED7C /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				9634F05A18DDA76C00091392 /* AmbulareModel.xcdatamodeld */,
+				9634F0AF18DDFA8800091392 /* RotaEntity.h */,
+				9634F0B018DDFA8800091392 /* RotaEntity.m */,
+				2CBC46D518E0552600020DB7 /* CoordenadasEntity.h */,
+				2CBC46D618E0552600020DB7 /* CoordenadasEntity.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		9607D19E18E978ED00C1ED7C /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CBC46D318E03CA600020DB7 /* AmbulareRotaCell.xib */,
+				2CBC46CE18E03AEA00020DB7 /* AmbulareRotaCell.h */,
+				2CBC46CF18E03AEA00020DB7 /* AmbulareRotaCell.m */,
+			);
+			name = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +487,7 @@
 					"$(inherited)",
 					/Users/formando/Documents/FacebookSDK,
 					/Users/Motard/Documents/FacebookSDK,
+					/Users/Motard/Documents/DEVELOPER/IOS/FLAG/Ambulare,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ambulare/Ambulare-Prefix.pch";
@@ -487,6 +506,7 @@
 					"$(inherited)",
 					/Users/formando/Documents/FacebookSDK,
 					/Users/Motard/Documents/FacebookSDK,
+					/Users/Motard/Documents/DEVELOPER/IOS/FLAG/Ambulare,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ambulare/Ambulare-Prefix.pch";

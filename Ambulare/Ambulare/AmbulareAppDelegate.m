@@ -20,6 +20,7 @@
 {
     NSLog(@"LaunchApplication");
     self.showSwipeImage = YES;
+    self.record = NO;
     
     return YES;
 }
