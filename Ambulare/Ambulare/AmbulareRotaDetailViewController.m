@@ -102,6 +102,7 @@
             MKPointAnnotation * point = [[MKPointAnnotation alloc]init];
             point.coordinate = coordenada;
             point.title = @"Start";
+            
             [self.MapView addAnnotation:point];
         }
         
@@ -152,6 +153,7 @@
         lineView.strokeColor = [UIColor blueColor];
         return lineView;
     }
+    
     return nil;
 }
 
@@ -206,8 +208,9 @@
 //            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
 //            //pinView.animatesDrop = YES;
 //            pinView.canShowCallout = YES;
-//            pinView.image = [UIImage imageNamed:@"customPin.png"];
+//            //pinView.image = [UIImage imageNamed:@"customPin.png"];
 //            pinView.calloutOffset = CGPointMake(0, 32);
+//            
 //        } else {
 //            pinView.annotation = annotation;
 //        }

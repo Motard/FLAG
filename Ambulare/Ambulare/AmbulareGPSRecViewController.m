@@ -20,6 +20,7 @@
 @property (nonatomic) NSMutableArray *avgSpeedArr;
 @property (nonatomic) double media;
 @property (nonatomic) NSString *nomeRota;
+@property (nonatomic) NSArray *rotasArr;
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
@@ -66,6 +67,19 @@
         self.vBottomViewGetNomePercurso.alpha = 0;
         self.vViewGPSStatus.alpha = 1;
     }
+    
+    //Iceder a todas as rotas
+    NSFetchRequest * fetchRequest = [[NSFetchRequest alloc]init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"RotaEntity" inManagedObjectContext:self.managedObjectContext];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSError * error;
+    
+    //passa os objectos da BD para a array todos
+    self.rotasArr = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
 }
 
 - (void)viewDidLoad
@@ -344,11 +358,16 @@
     
     if ([self.tfNomePercurso.text length] == 0)
         self.lAviso.text = @"Necessário introduzir nome para a rota";
+    else if ([self nomeRotaExiste:self.tfNomePercurso.text])
+    {
+        
+    }
     else
     {
         self.nomeRota = self.tfNomePercurso.text;
         
         self.tfNomePercurso.text = @"";
+        self.lAviso.text = @"";
         
         self.vBottomViewGetNomePercurso.alpha = 0;
         self.vViewGPSStatus.alpha = 1;
@@ -364,6 +383,24 @@
         
         [self.locationManager startUpdatingLocation];
     }
+}
+
+-(BOOL) nomeRotaExiste:(NSString *)nomeRota
+{
+    int count = [self.rotasArr count];
+    RotaEntity *rotaObj;
+    
+    for (int i=0 ; i<count ; i++)
+    {
+        rotaObj = [self.rotasArr objectAtIndex:i];
+        if ([[rotaObj.nomeRota uppercaseString] isEqualToString:[nomeRota uppercaseString]])
+        {
+            self.lAviso.numberOfLines = 0;
+            self.lAviso.text = @"Esse nome já existe. \nPor favor use um nome diferente.";
+            return true;
+        }
+    }
+    return false;
 }
 
 - (IBAction)stopGravarPercurso:(id)sender
@@ -408,16 +445,6 @@
         coordenadasEntity.latitude = [NSNumber numberWithDouble:latitude];
         coordenadasEntity.longitude = [NSNumber numberWithDouble:longitude];
         coordenadasEntity.iD = [NSNumber numberWithInt:i];
-        
-//        
-//        NSError *error;
-//        
-//        //Guardar no managedObjectContext
-//        if(![self.managedObjectContext save:&error])
-//        {
-//            NSLog(@"ERRO!! %@",[error localizedDescription]);
-//        }
-
     }
     
     //Guardar o resto dos dados na outra tabela
@@ -434,10 +461,13 @@
     if(![self.managedObjectContext save:&error])
     {
         NSLog(@"ERRO!! %@",[error localizedDescription]);
+        return;
     }
+        
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@",self.nomeRota] message:@"A rota foi gravada com sucesso" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
     
-    //Aceder ao appDelegate já instanciado e gravar os dados 
-    //AmbulareAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    //Aceder ao appDelegate já instanciado e gravar os dados
     [appDelegate saveContext];
 
 }
